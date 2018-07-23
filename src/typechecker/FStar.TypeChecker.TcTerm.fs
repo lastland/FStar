@@ -1664,7 +1664,7 @@ and check_short_circuit_args env head chead g_head args expected_topt : term * l
         | _ -> //fallback
           check_application_args env head chead g_head args expected_topt
 
-and tc_pat env (allow_implicits:bool) (pat_t:typ) p0 :
+and tc_pat env (allow_implicits:bool) (scrutinee_t:typ) p0 :
         pat                          (* the type-checked, fully decorated pattern                                   *)
       * list<bv>                     (* all its bound variables, used for closing the type of the branch term       *)
       * Env.env                      (* the environment extended with all the binders                               *)
@@ -1683,6 +1683,7 @@ and tc_pat env (allow_implicits:bool) (pat_t:typ) p0 :
         t, g  //AR: this used to force the guard, but now we defer it to be checked alongwith the guard for the branches
     in
     //an expression for each clause in a disjunctive pattern
+    //GM: Stale comment? We have no disjunctive patterns in internal syntax anymore (cf. #1062)
     let pat_bvs, exp, guard_pat_annots, p = PatternUtils.pat_as_exp allow_implicits env p0 tc_annot in
     if Env.debug env Options.High then begin
         BU.print2 "Pattern %s elaborated to %s\n" (Print.pat_to_string p0) (Print.pat_to_string p);
@@ -1690,52 +1691,35 @@ and tc_pat env (allow_implicits:bool) (pat_t:typ) p0 :
     end;
     let pat_env = List.fold_left Env.push_bv env pat_bvs in
     let env1, _ = Env.clear_expected_typ pat_env in
+
     //This is_pattern flag is crucial to check that every variable in the pattern
     //has exactly its expected type, rather than just a sub-type. see #1062
+    //GM: #1062 seems to be a different thing, but this is crucial to, for instance,
+    //not allow (match int with true -> e), since `true` can be typed in `Type` via b2t.
     let env1 = {env1 with Env.is_pattern=true} in
-    let expected_pat_t = Rel.unrefine env pat_t in
+
     if Env.debug env Options.High
-    then BU.print2 "Checking pattern expression %s against expected type %s\n"
+    then BU.print2 "Checking pattern expression %s against scrutinee type %s\n"
                     (Print.term_to_string exp)
-                    (Print.term_to_string pat_t);
+                    (Print.term_to_string scrutinee_t);
 
-    let env1 = Env.set_expected_typ env1 expected_pat_t in
     let exp, lc, g = tc_tot_or_gtot_term env1 exp in
-    //To support nested patterns, it's important to
-    //only keep the unification/subtyping constraints and to discard the logical guard for patterns
-    //Consider the following:
-    //   t = x:(int * int){fst x = snd x}
-    //   o : option t
-    //and
-    //   match o with Some #t (MkTuple2 #int #int a b)
-    //In this case, the guard_f will require (a = b), because of the refinement on t
-    //But, this is impossible to prove for two fresh ints a and b
-    //Instead, we check below that the inferred type for the entire pattern is unifiable
-    //with the expected type.
-    //This should guarantee that the equality assumption between the scrutinee and the pattern
-    //is at least well-typed and the branch gets to use any implied relations among the
-    //pattern-bound variables, e.g., a=b in this case
-    let g = {g with guard_f= Trivial} in
 
-    let _ =
-        //But, it's really important to confirm that the inferred type of the pattern
-        //unifies with the expected pattern type.
-        //Otherwise, its easy to get inconsistent;
-        //e.g., if expected_pat_t is (option nat)
-        //and   lc.res_typ is (option int)
-        //Rel.teq_nosmt below will forbid producing a logical guard (int = nat)
-        //Without this, we will be able to conclude in the branch of the pattern,
-        //with the equality Some #nat x = Some #int x
-        //that nat=int and hence False
-        if Rel.teq_nosmt_force env1 lc.res_typ expected_pat_t
-        then let env1 = Env.set_range env1 exp.pos in
-             Rel.discharge_guard_no_smt env1 g |>
-             Rel.resolve_implicits env1
-        else raise_error (Errors.Fatal_MismatchedPatternType, BU.format2 "Inferred type of pattern (%s) is incompatible with the type of the scrutinee (%s)"
+    let g =
+        match Rel.get_subtyping_predicate env1 scrutinee_t lc.res_typ with
+        | None ->
+            raise_error (Errors.Fatal_MismatchedPatternType,
+                            BU.format2 "Inferred type of pattern (%s) is incompatible with the type of the scrutinee (%s)"
                                        (Print.term_to_string lc.res_typ)
-                                       (Print.term_to_string expected_pat_t))
-                           exp.pos
+                                       (Print.term_to_string scrutinee_t)) exp.pos
+        | Some g' ->
+             let g' = Env.apply_guard g' exp in
+             let g = Env.conj_guard g g' in
+             let g = Rel.resolve_implicits env1 g in
+             let g = Rel.solve_deferred_constraints env1 g in
+             g
     in
+
     let norm_exp = N.normalize [Env.Beta] env1 exp in
     let uvs_to_string uvs =
         BU.set_elements uvs |>
@@ -1743,23 +1727,23 @@ and tc_pat env (allow_implicits:bool) (pat_t:typ) p0 :
         String.concat ", "
     in
     let uvs1 = Free.uvars norm_exp in
-    let uvs2 = Free.uvars expected_pat_t in
+    let uvs2 = Free.uvars scrutinee_t in
     if Env.debug env (Options.Other "Free") then begin
         BU.print2 ">> free_1(%s) = %s\n" (Print.term_to_string norm_exp) (uvs_to_string uvs1);
-        BU.print2 ">> free_2(%s) = %s\n" (Print.term_to_string expected_pat_t) (uvs_to_string uvs2)
+        BU.print2 ">> free_2(%s) = %s\n" (Print.term_to_string scrutinee_t) (uvs_to_string uvs2)
     end;
     if not <| BU.set_is_subset_of uvs1 uvs2
     then (let unresolved = BU.set_difference uvs1 uvs2 in
             raise_error (Errors.Fatal_UnresolvedPatternVar, (BU.format3 "Implicit pattern variables in %s could not be resolved against expected type %s;\
                                         Variables {%s} were unresolved; please bind them explicitly"
                                 (N.term_to_string env norm_exp)
-                                (N.term_to_string env expected_pat_t)
+                                (N.term_to_string env scrutinee_t)
                                 (uvs_to_string unresolved))) p.p);
 
     if Env.debug env Options.High
     then BU.print1 "Done checking pattern expression %s\n" (N.term_to_string env exp);
     let p = TcUtil.decorate_pattern env p exp in
-    p, pat_bvs, pat_env, exp, guard_pat_annots, norm_exp
+    p, pat_bvs, pat_env, exp, Env.conj_guard g guard_pat_annots, norm_exp
 
 
 (********************************************************************************************************************)
