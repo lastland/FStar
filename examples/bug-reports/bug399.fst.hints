@@ -3,25 +3,25 @@
   [
     [
       "Bug399.fail1",
-      1,
+      2,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_unit" ],
       0,
-      "f2acfa277080bba111f3cc2a6c25805a"
+      "3b75f95d90e4ba3d207936cea5c06010"
     ],
     [
       "Bug399.fail2",
-      1,
+      2,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_unit" ],
       0,
-      "637307863af0893fad7ea7351a17a32d"
+      "afa653475c3a214d46a46c90c63e2c40"
     ],
     [
       "Bug399.works",
-      1,
+      3,
       2,
       1,
       [
@@ -29,7 +29,7 @@
         "unit_inversion"
       ],
       0,
-      "243f02565dd9efded004f83d18b66db7"
+      "e3eff55b10a5223fe2ee1ad8b78afd79"
     ]
   ]
 ]

@@ -3,7 +3,7 @@
   [
     [
       "Ex03c.fibonacci",
-      1,
+      2,
       2,
       1,
       [
@@ -17,11 +17,11 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "0d6205235a4fef7471418f96f15b4d01"
+      "3755f67e840741e55fbf1fb0689134a4"
     ],
     [
       "Ex03c.fibonacci_greater_than_arg",
-      1,
+      2,
       2,
       1,
       [
@@ -36,18 +36,17 @@
         "primitive_Prims.op_Subtraction",
         "projection_inverse_BoxBool_proj_0",
         "projection_inverse_BoxInt_proj_0",
-        "refinement_interpretation_Ex03c_Tm_refine_0e393f873403ae589ea61d2b9bf53313",
         "refinement_interpretation_Ex03c_Tm_refine_ae8d7bc8e7cdbe001c7fb33d1c3618db",
         "refinement_interpretation_Prims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d",
         "token_correspondence_Ex03c.fibonacci.fuel_instrumented",
         "well-founded-ordering-on-nat"
       ],
       0,
-      "7dc2d0e64f88f1468f3ef5e52ce33adf"
+      "ed859283713634f4ebb49dddb1f49754"
     ],
     [
       "Ex03c.fibonacci",
-      2,
+      4,
       2,
       1,
       [
@@ -61,7 +60,7 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "9f2decf7cfd1d724deadd3014aa7ee1d"
+      "17e48abc46d353c0141064d3a8e44ea9"
     ]
   ]
 ]

@@ -3,25 +3,25 @@
   [
     [
       "Ex12g.TMAC2.bspec0",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "5c73b419bc24735e46ae123286241a84"
+      "8d3e4888f9516d649d22512aedd80601"
     ],
     [
       "Ex12g.TMAC2.bspec1",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "a79a9c54dc0cf064a2f6aa622ffcd4b9"
+      "4b27d5319a62d892a98fcffea6d2c3cb"
     ],
     [
       "Ex12g.TMAC2.keygen",
-      1,
+      2,
       2,
       1,
       [
@@ -40,11 +40,11 @@
         "typing_Ex12.BMAC.keygen"
       ],
       0,
-      "6721251a2392c4a57814f4065bb3c890"
+      "3daa70a0a736268623ac6da4eebb8467"
     ],
     [
       "Ex12g.TMAC2.mac",
-      1,
+      2,
       2,
       1,
       [
@@ -79,11 +79,11 @@
         "typing_FStar.Seq.Base.length"
       ],
       0,
-      "5413c23052f7c8c544363ddcd3e6c0b6"
+      "96bc3d2ca798ee389d917b69a03dac70"
     ],
     [
       "Ex12g.TMAC2.verify",
-      1,
+      2,
       2,
       1,
       [
@@ -118,29 +118,29 @@
         "typing_FStar.Seq.Base.length"
       ],
       0,
-      "32cb07a4f89fa4486efea240af791347"
+      "8d054d681379aca6d195cca212c226bf"
     ],
     [
       "Ex12g.TMAC2.bspec0",
-      2,
+      4,
       2,
       1,
       [ "@query" ],
       0,
-      "d90f2a74f13afb1a2622038f40dbf56c"
+      "12f52ac2cfa0b7e71be4a5d1491e917a"
     ],
     [
       "Ex12g.TMAC2.bspec1",
-      2,
+      4,
       2,
       1,
       [ "@query" ],
       0,
-      "59b8f332ea524f6273ba5c239c9e09aa"
+      "10cdee0e7baccedc565b61daa757080d"
     ],
     [
       "Ex12g.TMAC2.keygen",
-      2,
+      4,
       2,
       1,
       [
@@ -159,11 +159,11 @@
         "typing_Ex12.BMAC.keygen"
       ],
       0,
-      "e3a98ec1e5d196f86731fc980103f805"
+      "3442dc7b6a63e29b19ef1f6745b90975"
     ],
     [
       "Ex12g.TMAC2.mac",
-      2,
+      4,
       2,
       1,
       [
@@ -198,11 +198,11 @@
         "typing_FStar.Seq.Base.length"
       ],
       0,
-      "bad6ef81f0c310045f8e47e1357f60ab"
+      "35dbc6137cb38e28ef2c122f5fb5723c"
     ],
     [
       "Ex12g.TMAC2.verify",
-      2,
+      4,
       2,
       1,
       [
@@ -237,7 +237,7 @@
         "typing_FStar.Seq.Base.length"
       ],
       0,
-      "fc2fa74d164d5f1a4015e168c3fea464"
+      "a18a3792d0903b18fbeae339664ab070"
     ]
   ]
 ]

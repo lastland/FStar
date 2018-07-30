@@ -3,7 +3,7 @@
   [
     [
       "Bug025.length",
-      1,
+      2,
       2,
       1,
       [
@@ -16,7 +16,7 @@
         "subterm_ordering_Prims.Cons"
       ],
       0,
-      "dd644f1b8ae20a2d6ebea89223ba6f4b"
+      "80d8c960f6f6d722e0fe987cb8142f5b"
     ]
   ]
 ]

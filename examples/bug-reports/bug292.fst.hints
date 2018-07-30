@@ -3,12 +3,12 @@
   [
     [
       "Bug292.shared",
-      1,
+      2,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "8eb6849f42927812782d7ce1206d8f59"
+      "39a0fac27754ecfabcc63f33a7af5c05"
     ],
     [
       "Bug292.triple_a",
@@ -17,11 +17,11 @@
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "7c21c41470619ff3b45bc86e4ce4f57b"
+      "518701e8d6c6deb1821633f168acc76c"
     ],
     [
       "Bug292.triple_a",
-      2,
+      4,
       2,
       1,
       [
@@ -43,7 +43,7 @@
         "refinement_interpretation_Bug292_Tm_refine_bd6d982985e2df5ac87b5db124accca1"
       ],
       0,
-      "b2f5aa7618ba8a9d96c5be3b8baaee9f"
+      "1b58c191c6cd10c4e447f527340105f1"
     ]
   ]
 ]

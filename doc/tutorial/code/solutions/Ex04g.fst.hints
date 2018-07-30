@@ -3,32 +3,6 @@
   [
     [
       "Ex04g.hd",
-      1,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "disc_equation_Prims.Cons",
-        "projection_inverse_BoxBool_proj_0",
-        "refinement_interpretation_Prims_Tm_refine_7aac12c24449a22c34d98a0ea8ed4a32"
-      ],
-      0,
-      "151b67c2ec4b770d89f5c5b8b3177b4f"
-    ],
-    [
-      "Ex04g.tl",
-      1,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "disc_equation_Prims.Cons",
-        "projection_inverse_BoxBool_proj_0",
-        "refinement_interpretation_Prims_Tm_refine_7aac12c24449a22c34d98a0ea8ed4a32"
-      ],
-      0,
-      "d4a04a829ae047b587c2e1134296cc8c"
-    ],
-    [
-      "Ex04g.hd",
       2,
       2,
       1,
@@ -38,7 +12,7 @@
         "refinement_interpretation_Prims_Tm_refine_7aac12c24449a22c34d98a0ea8ed4a32"
       ],
       0,
-      "3174f5116e879492178ba9b84a4bbfa4"
+      "02e0385a472ca510dd3b3779172168a2"
     ],
     [
       "Ex04g.tl",
@@ -52,6 +26,32 @@
       ],
       0,
       "a55013f7b1185716a5afc7174f55f494"
+    ],
+    [
+      "Ex04g.hd",
+      4,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query", "disc_equation_Prims.Cons",
+        "projection_inverse_BoxBool_proj_0",
+        "refinement_interpretation_Prims_Tm_refine_7aac12c24449a22c34d98a0ea8ed4a32"
+      ],
+      0,
+      "ce9e4da3b1c85923b6b5efdb7cc1d429"
+    ],
+    [
+      "Ex04g.tl",
+      4,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query", "disc_equation_Prims.Cons",
+        "projection_inverse_BoxBool_proj_0",
+        "refinement_interpretation_Prims_Tm_refine_7aac12c24449a22c34d98a0ea8ed4a32"
+      ],
+      0,
+      "72e8dcf68155370a36a243bc3ece0fa5"
     ]
   ]
 ]

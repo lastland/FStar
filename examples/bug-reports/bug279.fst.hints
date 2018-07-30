@@ -10,20 +10,20 @@
         "@query", "assumption_Prims.list__uu___haseq", "kinding_Bug279.t@tok"
       ],
       0,
-      "d710512abb1575635a79b9ce75977e3d"
+      "11d5f134ce7f6c11f909c177f8d240c4"
     ],
     [
       "Bug279.f",
-      1,
+      2,
       2,
       1,
       [
         "@MaxIFuel_assumption", "@query",
-        "binder_x_91fb826417ba3a918ffbd7d13c1c1540_0",
+        "binder_x_91fb826417ba3a918ffbd7d13c1c1540_0", "equation_Bug279.ts",
         "subterm_ordering_Bug279.T"
       ],
       0,
-      "03c880c0f9f4c40ade491ede11fdadc7"
+      "91e32e8f238afd6a18e695211e069de4"
     ]
   ]
 ]

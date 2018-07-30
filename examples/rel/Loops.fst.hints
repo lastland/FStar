@@ -3,7 +3,7 @@
   [
     [
       "Loops.sum_up",
-      1,
+      3,
       1,
       0,
       [
@@ -19,11 +19,11 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "d840186ec46dce484fc9ea580722578e"
+      "49ddfe89351980388bf5816c8079e61a"
     ],
     [
       "Loops.sum_up_eq",
-      1,
+      6,
       1,
       0,
       [
@@ -73,11 +73,11 @@
         "unit_typing", "well-founded-ordering-on-nat"
       ],
       0,
-      "89854558365de0393271974d5b06ea1d"
+      "cf0b13126d43ac87e98cecccad337f00"
     ],
     [
       "Loops.sum_up_commute",
-      1,
+      10,
       1,
       0,
       [
@@ -128,11 +128,11 @@
         "unit_typing", "well-founded-ordering-on-nat"
       ],
       0,
-      "3dec11000ce1790aba4234b43df754fb"
+      "39c90668e331b4f26d8a66baef63440e"
     ],
     [
       "Loops.sum_dn",
-      1,
+      3,
       1,
       0,
       [
@@ -147,11 +147,11 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "21ae245a292e17e75057f1dcf1919015"
+      "a332a47796ea6cd69b86dc7454140df6"
     ],
     [
       "Loops.sum_dn_eq",
-      1,
+      6,
       1,
       0,
       [
@@ -201,11 +201,11 @@
         "unit_typing", "well-founded-ordering-on-nat"
       ],
       0,
-      "966fda7ffe740a88acd2019c75d1d869"
+      "acfa14b5cdcbc9af93994a58c36207a8"
     ],
     [
       "Loops.sum_dn_commute",
-      1,
+      10,
       1,
       0,
       [
@@ -256,7 +256,7 @@
         "unit_typing", "well-founded-ordering-on-nat"
       ],
       0,
-      "0421068bac7d9348e792f6951319da99"
+      "9d463e05b9ce30132ddfd886c1f5007e"
     ],
     [
       "Loops.sum_up_dn_aux",
@@ -269,11 +269,11 @@
         "refinement_interpretation_Loops_Tm_refine_5d68b4aedab07e9543c96792e76744c9"
       ],
       0,
-      "ee9ee233d766f24f9f3cccf67087c115"
+      "3cfe6a14c19f66a50b59f2c6c4768cc5"
     ],
     [
       "Loops.sum_up_dn_aux",
-      2,
+      4,
       1,
       0,
       [
@@ -333,11 +333,11 @@
         "unit_typing", "well-founded-ordering-on-nat"
       ],
       0,
-      "6a667cd55e4bb0bd2c42946d7036342f"
+      "ad8cd3588c0e2ec7f73b782e319e3b1d"
     ],
     [
       "Loops.equiv_sum_up_dn",
-      1,
+      3,
       1,
       0,
       [
@@ -354,6 +354,7 @@
         "equation_Prims.as_requires", "equation_Prims.l_True",
         "equation_with_fuel_Loops.sum_dn.fuel_instrumented",
         "equation_with_fuel_Loops.sum_up.fuel_instrumented", "int_inversion",
+        "int_typing",
         "interpretation_FStar.DM4F.Heap.ST_Tm_abs_23743678d6c19eda6a29e9cfa329fe44",
         "interpretation_FStar.DM4F.Heap.ST_Tm_abs_5045fd2947aab30e65b48e933aad1c5c",
         "interpretation_FStar.DM4F.Heap.ST_Tm_abs_7118eb129e1e8ce98d9b40c620feff33",
@@ -372,11 +373,11 @@
         "true_interp", "typing_Loops.sum_dn", "typing_Loops.v", "unit_typing"
       ],
       0,
-      "eec58e527f9d8b212e60b7de05d0cf56"
+      "336546c89c56d2756cee13039c2dd4fb"
     ],
     [
       "Loops.sum_up",
-      2,
+      5,
       1,
       0,
       [
@@ -392,11 +393,11 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "6d9002711172ab6d5370073c0098bf7e"
+      "83273e873010377e822d15a1687479c7"
     ],
     [
       "Loops.sum_up_eq",
-      2,
+      7,
       1,
       0,
       [
@@ -404,11 +405,11 @@
         "refinement_interpretation_FStar.DM4F.Heap.ST_Tm_refine_d3cff47ff117e43191fee5488bb29a1f"
       ],
       0,
-      "92ab9a52b06639632617bdf350a4fe25"
+      "2f294a4977f42cf87d4411ffdec03360"
     ],
     [
       "Loops.sum_up_commute",
-      2,
+      11,
       1,
       0,
       [
@@ -419,11 +420,11 @@
         "refinement_interpretation_FStar.DM4F.Heap.ST_Tm_refine_d3cff47ff117e43191fee5488bb29a1f"
       ],
       0,
-      "cbefdd9d6800af5063aee8bcce919d7a"
+      "3031780306131b0bc2d1abefa97d9f8a"
     ],
     [
       "Loops.sum_dn",
-      2,
+      5,
       1,
       0,
       [
@@ -438,11 +439,11 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "d0938839d58eca2a5885137a692645d8"
+      "52a12cac4a34c0feb191a8605521e56f"
     ],
     [
       "Loops.sum_dn_eq",
-      2,
+      7,
       1,
       0,
       [
@@ -450,11 +451,11 @@
         "refinement_interpretation_FStar.DM4F.Heap.ST_Tm_refine_d3cff47ff117e43191fee5488bb29a1f"
       ],
       0,
-      "15525f89da5b515e1af907d1d61a0355"
+      "835b2c4d593f45032f8c56add0fce0d8"
     ],
     [
       "Loops.sum_dn_commute",
-      2,
+      11,
       1,
       0,
       [
@@ -465,11 +466,11 @@
         "refinement_interpretation_FStar.DM4F.Heap.ST_Tm_refine_d3cff47ff117e43191fee5488bb29a1f"
       ],
       0,
-      "f5ea8e35278db81d2f76b055dc02f2f0"
+      "9d5c6608949736ec6aa597e373444094"
     ],
     [
       "Loops.sum_up_dn_aux",
-      3,
+      5,
       1,
       0,
       [
@@ -478,11 +479,11 @@
         "refinement_interpretation_Loops_Tm_refine_5d68b4aedab07e9543c96792e76744c9"
       ],
       0,
-      "1a695691663e5c2acb3827de80d06c0b"
+      "21fddf6259373fdab69005f3552202fb"
     ],
     [
       "Loops.equiv_sum_up_dn",
-      2,
+      4,
       1,
       0,
       [
@@ -490,7 +491,7 @@
         "refinement_interpretation_FStar.DM4F.Heap.ST_Tm_refine_d3cff47ff117e43191fee5488bb29a1f"
       ],
       0,
-      "a55cd00430f212632710d2cc5b6ab976"
+      "8e9ceef570ddc0582f252ed1049fb2b0"
     ]
   ]
 ]

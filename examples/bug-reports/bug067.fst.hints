@@ -3,12 +3,12 @@
   [
     [
       "Bug067.test",
-      1,
+      2,
       2,
       1,
-      [ "@query", "equation_Bug067.good", "true_interp" ],
+      [ "@query", "equation_Bug067.good" ],
       0,
-      "a81bcfe4d3629ecb60fd42ad555eb6a0"
+      "4737b10a1bdf632a19b570a6ee8ab4de"
     ]
   ]
 ]

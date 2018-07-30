@@ -8,7 +8,7 @@
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "5c65a9d68ec6b8763e65d437ac4ac8f9"
+      "0e9011e042c53af4dcc6931f9bc6d983"
     ],
     [
       "Lens.circle",
@@ -21,7 +21,7 @@
         "haseqPrims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "8024b8ec002c9a28b4d7a5e09151f3d8"
+      "359e246aa63584f0f071848b5e12b8c4"
     ],
     [
       "Lens.rgb",
@@ -33,7 +33,7 @@
         "haseqPrims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "53bbc7ede3d4de8fbbbf141ee08c80dd"
+      "74debad886c1da59904c30ee873aae71"
     ],
     [
       "Lens.colored",
@@ -42,7 +42,7 @@
       1,
       [ "@query", "assumption_Lens.rgb__uu___haseq" ],
       0,
-      "5629da25261419229ae9aa6bd1a66626"
+      "31eeb49671ddc3470004c4d018ca75b7"
     ],
     [
       "Lens.stlens",
@@ -62,7 +62,7 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "965876d53f9f541496628699b8a0a596"
+      "7064f0f2bcf2ba3a2501d653db3aeca2"
     ],
     [
       "Lens.__proj__Mkstlens__item__st_get",
@@ -81,7 +81,7 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "fd489204a44d5908cdc00e26d29120d2"
+      "7bd2b656fe9f087547d6a213016013a6"
     ],
     [
       "Lens.__proj__Mkstlens__item__st_put",
@@ -101,7 +101,7 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "de760362cae216b1f5cc236ed4dce790"
+      "0b8d0023220d927a94bace5eaf9d78d3"
     ],
     [
       "Lens.__proj__Mkstlens__item__st_put",
@@ -119,11 +119,11 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "a5c78906f11cf72a7baa0036f28135a6"
+      "f568a10efbb5bd585f07b4bca93bbddd"
     ],
     [
       "Lens.st",
-      1,
+      2,
       2,
       1,
       [
@@ -137,11 +137,11 @@
         "typing_FStar.Ref.addr_of", "typing_FStar.Ref.only"
       ],
       0,
-      "feb0375dbfaa73bf3e2ddd17a2b8da10"
+      "016472c7ad8729a7ae458327c9fbfb01"
     ],
     [
       "Lens.op_Bar_Colon_Dot_Dot",
-      1,
+      2,
       2,
       1,
       [
@@ -162,7 +162,7 @@
         "token_correspondence_Lens.op_Bar_Colon_Equals"
       ],
       0,
-      "fb35d39dd3bf3f930e25cfdbbf62bd9b"
+      "9859ea8a542e96a6b69dc95a867bf95f"
     ],
     [
       "Lens.point",
@@ -171,7 +171,7 @@
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "33b31292692708a7ff4f15766d09f797"
+      "e4d36a8abfc991a3f408c596f5edc99f"
     ],
     [
       "Lens.circle",
@@ -184,7 +184,7 @@
         "haseqPrims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "ab72cb10bef97ea236c478e6650cdfa4"
+      "cc26fa35de1319526db64b3258ef6e9c"
     ],
     [
       "Lens.rgb",
@@ -196,7 +196,7 @@
         "haseqPrims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "2a3ab4d6130be995fb5db8af53f92a0e"
+      "424096509b5aead98a2c23ee1ad31870"
     ],
     [
       "Lens.colored",
@@ -205,7 +205,7 @@
       1,
       [ "@query", "assumption_Lens.rgb__uu___haseq" ],
       0,
-      "ca3951748e6c81d01034f41b033ce319"
+      "2376a24dd897bf13d9140c0fa024d9da"
     ],
     [
       "Lens.stlens",
@@ -225,7 +225,7 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "bf275c72a0dbc26a9c2cc7b72a8ec0d8"
+      "59d580ade57cf5e2fc432d7d082526cd"
     ],
     [
       "Lens.__proj__Mkstlens__item__st_get",
@@ -244,7 +244,7 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "093b0f51ad8b6940fc8bc208665122ea"
+      "cea0818688e8488a730a03fe79013d11"
     ],
     [
       "Lens.__proj__Mkstlens__item__st_put",
@@ -264,7 +264,7 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "8bfd6af7654d5bc79c6485ea606f3a3d"
+      "115f568807a168c462fb1de6f33f5d4c"
     ],
     [
       "Lens.__proj__Mkstlens__item__st_put",
@@ -282,29 +282,24 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "89ceac6c6c3fb4d964c5cda9e7725333"
+      "e82de5c07c4ca17d1c9c07a767302b3a"
     ],
     [
       "Lens.st",
-      2,
+      4,
       2,
       1,
       [
         "@MaxIFuel_assumption", "@query",
-        "equation_FStar.Heap.trivial_preorder",
         "equation_FStar.Monotonic.Heap.only",
-        "equation_Lens.op_String_Access", "equation_Prims.nat",
-        "fuel_guarded_inversion_Lens.lens",
-        "refinement_interpretation_FStar.Ref_Tm_refine_6dad3394a7b23d86d607c303ffd1e2f7",
-        "refinement_interpretation_FStar.Ref_Tm_refine_97700fe16f945c5ec8c6946e4b28ac5b",
-        "typing_FStar.Ref.addr_of", "typing_FStar.Ref.only"
+        "equation_Lens.op_String_Access", "fuel_guarded_inversion_Lens.lens"
       ],
       0,
-      "7e1f50abe303c76539b1623f51b1fc2e"
+      "cc5a7de87c2beb82615c3dc682aa49e2"
     ],
     [
       "Lens.op_Bar_Colon_Dot_Dot",
-      2,
+      4,
       2,
       1,
       [
@@ -325,7 +320,7 @@
         "token_correspondence_Lens.op_Bar_Colon_Equals"
       ],
       0,
-      "65ef3690e39645ed566e681a810a38ba"
+      "22f4d3a91a995267418095edb88765b7"
     ],
     [
       "Lens.op_Bar_Colon_Colon_Equals",
@@ -345,7 +340,7 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "c3c991a0346e246764d19d9334ca04ae"
+      "b5cc6664a28263288b7abce452b2f87f"
     ],
     [
       "Lens.op_Array_Assignment",
@@ -365,7 +360,7 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "19f85b8927c5a39d650d82d0af9396be"
+      "9e318100a551dcca66108514ce4f65fd"
     ],
     [
       "Lens.mutate",
@@ -385,7 +380,7 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "6b69b3db2e85e5b4c94783f812579f66"
+      "2a450c699d81d0198dc043973c191466"
     ],
     [
       "Lens.mutate2",
@@ -405,7 +400,7 @@
         "typing_FStar.Heap.trivial_preorder", "typing_FStar.ST.ref"
       ],
       0,
-      "43648227cc543dcbbf6839b06915c6e0"
+      "4114b86f9af87fda780471cd6cc6cfdd"
     ],
     [
       "Lens.mutate3",
@@ -425,7 +420,7 @@
         "typing_FStar.Heap.trivial_preorder"
       ],
       0,
-      "c9ed35578e8219a5bedee843e4626397"
+      "2a469c1e0c47fbc616544c53ed5ab15f"
     ]
   ]
 ]

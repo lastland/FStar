@@ -3,49 +3,47 @@
   [
     [
       "Ex01a.canRead",
-      1,
+      2,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_string" ],
       0,
-      "4a59e57270afa5511bfc87b9eeb22447"
+      "87751281e9c1bfa671de36651f5f5324"
     ],
     [
       "Ex01a.staticChecking",
-      1,
+      2,
       2,
       1,
       [
-        "@MaxIFuel_assumption", "@query",
-        "constructor_distinct_FStar.Pervasives.V", "equation_Ex01a.canRead",
-        "equation_Ex01a.canWrite", "equation_Ex01a.readme",
-        "equation_Ex01a.tmp",
+        "@MaxIFuel_assumption", "@query", "bool_inversion",
+        "equation_Ex01a.canRead", "equation_Ex01a.canWrite",
+        "equation_Ex01a.readme", "equation_Ex01a.tmp",
         "fuel_guarded_inversion_FStar.Pervasives.result",
-        "primitive_Prims.op_BarBar", "primitive_Prims.op_Equality",
-        "projection_inverse_BoxBool_proj_0",
-        "projection_inverse_FStar.Pervasives.V_a",
-        "projection_inverse_FStar.Pervasives.V_v"
+        "function_token_typing_Ex01a.tmp", "primitive_Prims.op_BarBar",
+        "primitive_Prims.op_Equality", "projection_inverse_BoxBool_proj_0",
+        "typing_Ex01a.canRead"
       ],
       0,
-      "0260e3c5b1a8ca44733e6d80ab2ad714"
+      "dc79f9c17f468984b2b3a0692ec8416f"
     ],
     [
       "Ex01a.checkedRead",
-      1,
+      2,
       2,
       1,
       [ "@query", "projection_inverse_BoxBool_proj_0" ],
       0,
-      "bd23d6ecd4c13aa7356195dfca9758a8"
+      "7e325d292cd68d7f9bd866784ef1c8ce"
     ],
     [
       "Ex01a.canRead",
-      2,
+      4,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_string" ],
       0,
-      "e72067512947ff377893dc26ab8ee664"
+      "d5b3beff6b3a6db94214abb46a6ee614"
     ]
   ]
 ]

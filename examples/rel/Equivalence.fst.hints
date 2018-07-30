@@ -3,7 +3,7 @@
   [
     [
       "Equivalence.if_left",
-      1,
+      2,
       2,
       1,
       [
@@ -13,58 +13,7 @@
         "projection_inverse_FStar.Pervasives.Native.Mktuple2__2"
       ],
       0,
-      "91771b8b8dd44859cc9849540e4fef8f"
-    ],
-    [
-      "Equivalence.if_left_wp",
-      1,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query",
-        "Prims_pretyping_f8666440faa91836cc5a13998af863fc",
-        "interpretation_Equivalence_Tm_abs_0fa59d72b49b5a2bc999d88ede729bfa",
-        "projection_inverse_FStar.Pervasives.Native.Mktuple2__1",
-        "projection_inverse_FStar.Pervasives.Native.Mktuple2__2",
-        "refinement_interpretation_Equivalence_Tm_refine_3bb8de9165e5ea42e5e07a8efedd0281",
-        "unit_typing"
-      ],
-      0,
-      "4159ee3aa73072a8e412a00a44950524"
-    ],
-    [
-      "Equivalence.if_left_wp",
-      2,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query",
-        "Prims_pretyping_f8666440faa91836cc5a13998af863fc",
-        "interpretation_Equivalence_Tm_abs_0fa59d72b49b5a2bc999d88ede729bfa",
-        "projection_inverse_FStar.Pervasives.Native.Mktuple2__1",
-        "projection_inverse_FStar.Pervasives.Native.Mktuple2__2",
-        "refinement_interpretation_Equivalence_Tm_refine_3bb8de9165e5ea42e5e07a8efedd0281",
-        "unit_typing"
-      ],
-      0,
-      "3387f2931ea0d860827c835ce6e79fb9"
-    ],
-    [
-      "Equivalence.if_left_wp'",
-      1,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query", "bool_inversion",
-        "equation_FStar.Pervasives.Native.fst",
-        "interpretation_Equivalence_Tm_abs_5646eff0017a4d35a78f1f3103e85ba6",
-        "proj_equation_FStar.Pervasives.Native.Mktuple2__1",
-        "projection_inverse_FStar.Pervasives.Native.Mktuple2__1",
-        "projection_inverse_FStar.Pervasives.Native.Mktuple2__2",
-        "refinement_interpretation_Equivalence_Tm_refine_362a15a1e90690626f6a6a30d2273471"
-      ],
-      0,
-      "f0add850b3fcbe6429296b8dd61359e4"
+      "10e57d0df4f492291f79c43dfd06f3c8"
     ],
     [
       "Equivalence.if_left_wp",
@@ -78,7 +27,24 @@
         "refinement_interpretation_Equivalence_Tm_refine_3bb8de9165e5ea42e5e07a8efedd0281"
       ],
       0,
-      "8f712ac98db96072477a9b1d6dfb9015"
+      "4bd119f98c037a47a9177e44058b257d"
+    ],
+    [
+      "Equivalence.if_left_wp",
+      4,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "Prims_pretyping_f8666440faa91836cc5a13998af863fc",
+        "interpretation_Equivalence_Tm_abs_0fa59d72b49b5a2bc999d88ede729bfa",
+        "projection_inverse_FStar.Pervasives.Native.Mktuple2__1",
+        "projection_inverse_FStar.Pervasives.Native.Mktuple2__2",
+        "refinement_interpretation_Equivalence_Tm_refine_3bb8de9165e5ea42e5e07a8efedd0281",
+        "unit_typing"
+      ],
+      0,
+      "fa647ee9e1e0972bd9504a2fd7500a34"
     ],
     [
       "Equivalence.if_left_wp'",
@@ -86,11 +52,42 @@
       2,
       1,
       [
+        "@MaxIFuel_assumption", "@query", "bool_inversion",
+        "equation_FStar.Pervasives.Native.fst",
+        "interpretation_Equivalence_Tm_abs_5646eff0017a4d35a78f1f3103e85ba6",
+        "proj_equation_FStar.Pervasives.Native.Mktuple2__1",
+        "projection_inverse_FStar.Pervasives.Native.Mktuple2__1",
+        "projection_inverse_FStar.Pervasives.Native.Mktuple2__2",
+        "refinement_interpretation_Equivalence_Tm_refine_362a15a1e90690626f6a6a30d2273471"
+      ],
+      0,
+      "e7b79e1100942fd957624905b917d16b"
+    ],
+    [
+      "Equivalence.if_left_wp",
+      5,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "projection_inverse_FStar.Pervasives.Native.Mktuple2__1",
+        "projection_inverse_FStar.Pervasives.Native.Mktuple2__2",
+        "refinement_interpretation_Equivalence_Tm_refine_3bb8de9165e5ea42e5e07a8efedd0281"
+      ],
+      0,
+      "aec2c98a30a8127677c25afd6b12713f"
+    ],
+    [
+      "Equivalence.if_left_wp'",
+      3,
+      2,
+      1,
+      [
         "@MaxIFuel_assumption", "@query",
         "refinement_interpretation_Equivalence_Tm_refine_362a15a1e90690626f6a6a30d2273471"
       ],
       0,
-      "7968b80e1c525692f6ff16d740aa2309"
+      "ef8e59c03b04b5de756d9c4dda48ec77"
     ]
   ]
 ]

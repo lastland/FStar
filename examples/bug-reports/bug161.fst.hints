@@ -3,7 +3,7 @@
   [
     [
       "Bug161.find",
-      1,
+      2,
       2,
       1,
       [
@@ -19,7 +19,7 @@
         "subterm_ordering_Prims.Cons"
       ],
       0,
-      "909a73d9dc2a372bbf8b955c2b5cdc98"
+      "f6f7ce6c20f793c67159f13a384479b6"
     ]
   ]
 ]

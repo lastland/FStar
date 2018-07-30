@@ -3,21 +3,21 @@
   [
     [
       "Bug398.foo",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "fa65a995de3ead0f754ba11502ed363b"
+      "116bb344ac9da574c6b44a68e3b55010"
     ],
     [
       "Bug398.bar",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "42ae1250350a273dbab8b5305b17ea19"
+      "d91accb7ee0975ea4aba1ea106581319"
     ]
   ]
 ]

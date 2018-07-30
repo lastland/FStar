@@ -3,7 +3,7 @@
   [
     [
       "Ex03a.factorial",
-      1,
+      3,
       2,
       1,
       [
@@ -15,11 +15,11 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "d65b1282c38a65dc099c896581f3b573"
+      "7a14f6f98ce6e4832b443d0098e460a0"
     ],
     [
       "Ex03a.factorial",
-      2,
+      5,
       2,
       1,
       [
@@ -31,7 +31,7 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "204ec5b66702254ea1195a9627aac5ee"
+      "980f6e905b107b645ec80aafa3cca1ee"
     ]
   ]
 ]

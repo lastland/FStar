@@ -3,7 +3,7 @@
   [
     [
       "Bug1427.empty",
-      1,
+      2,
       2,
       1,
       [
@@ -12,7 +12,7 @@
         "projection_inverse_BoxBool_proj_0", "projection_inverse_Prims.Nil_a"
       ],
       0,
-      "353bebd349cae96bd35e55087e8a7503"
+      "43ee42b0fefa562c7ae87d2e89c35e07"
     ]
   ]
 ]

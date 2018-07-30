@@ -3,7 +3,7 @@
   [
     [
       "TestSet.should_succeed",
-      1,
+      2,
       2,
       1,
       [
@@ -15,7 +15,7 @@
         "typing_FStar.TSet.singleton", "typing_FStar.TSet.union"
       ],
       0,
-      "1053880263e08ff0c1a716e0e6ca625d"
+      "1895c028d0b97782552a15b3a96176b9"
     ]
   ]
 ]

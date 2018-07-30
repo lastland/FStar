@@ -3,16 +3,16 @@
   [
     [
       "IfcRecursiveReify.low_equiv",
-      1,
+      2,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "de388626b3d1deec1d55a337502708f1"
+      "fe69eb95970a016c39e0e017615be12a"
     ],
     [
       "IfcRecursiveReify.p1",
-      1,
+      2,
       2,
       1,
       [
@@ -34,11 +34,11 @@
         "unit_inversion", "unit_typing", "well-founded-ordering-on-nat"
       ],
       0,
-      "567715350051a2d7c5878f4af9de669f"
+      "713bb83f69bda64edcf71e4862f5f508"
     ],
     [
       "IfcRecursiveReify.ni_p1",
-      1,
+      2,
       2,
       1,
       [
@@ -91,11 +91,11 @@
         "unit_typing", "well-founded-ordering-on-nat"
       ],
       0,
-      "0855f458f352f80e448dd7816c806cc4"
+      "3438a82d8c4f3a22d476ca4c66f9cf91"
     ],
     [
       "IfcRecursiveReify.p2",
-      1,
+      2,
       2,
       1,
       [
@@ -117,11 +117,11 @@
         "unit_inversion", "unit_typing", "well-founded-ordering-on-nat"
       ],
       0,
-      "467811e34dc6973addcc112d24f09fa3"
+      "febd89ef9ff2b4e8708163d740045b6f"
     ],
     [
       "IfcRecursiveReify.ni_p2",
-      1,
+      2,
       2,
       1,
       [
@@ -175,11 +175,11 @@
         "unit_typing", "well-founded-ordering-on-nat"
       ],
       0,
-      "da1f609124a5da179a23ff4a68494e54"
+      "e6815dec5ad661bfbc6cb5b6251870ff"
     ],
     [
       "IfcRecursiveReify.ni_p3",
-      1,
+      2,
       2,
       1,
       [
@@ -197,68 +197,48 @@
         "unit_typing"
       ],
       0,
-      "1aa3e1a57ea9584c8078b86ba54bed3c"
+      "5a6dca7ec46bbbc9b8d3585b5011b0f0"
     ],
     [
       "IfcRecursiveReify.low_equiv",
-      2,
+      4,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "e8f7826444025d0d04ae9bb079d9122d"
+      "69f522fe40d1ed6a65d4f2715529dc28"
     ],
     [
       "IfcRecursiveReify.p1",
-      2,
+      4,
       2,
       1,
       [
         "@MaxIFuel_assumption", "@query",
-        "Prims_pretyping_ae567c2fb75be05905677af440075565",
-        "Prims_pretyping_f8666440faa91836cc5a13998af863fc",
         "binder_x_6d0180d4fcd10237cf0d87dd345d77cc_2",
-        "data_typing_intro_FStar.Pervasives.Native.Mktuple2@tok",
-        "equality_tok_Prims.LexTop@tok",
-        "equation_FStar.DM4F.Heap.IntStoreFixed.store_size",
-        "equation_Prims.eqtype",
-        "function_token_typing_FStar.DM4F.Heap.IntStoreFixed.heap",
-        "function_token_typing_FStar.DM4F.Heap.IntStoreFixed.store_size",
-        "function_token_typing_Prims.unit", "int_inversion", "int_typing",
+        "equality_tok_Prims.LexTop@tok", "int_typing",
         "primitive_Prims.op_GreaterThan", "primitive_Prims.op_Subtraction",
         "projection_inverse_BoxBool_proj_0",
-        "projection_inverse_BoxInt_proj_0",
-        "refinement_interpretation_Prims_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
-        "unit_inversion", "unit_typing", "well-founded-ordering-on-nat"
+        "projection_inverse_BoxInt_proj_0", "well-founded-ordering-on-nat"
       ],
       0,
-      "a33aa3beef55ef8b0485235e573aa2e1"
+      "bf333969b1a867f275234995710c392e"
     ],
     [
       "IfcRecursiveReify.p2",
-      2,
+      4,
       2,
       1,
       [
         "@MaxIFuel_assumption", "@query",
-        "Prims_pretyping_ae567c2fb75be05905677af440075565",
-        "Prims_pretyping_f8666440faa91836cc5a13998af863fc",
         "binder_x_6d0180d4fcd10237cf0d87dd345d77cc_2",
-        "data_typing_intro_FStar.Pervasives.Native.Mktuple2@tok",
-        "equality_tok_Prims.LexTop@tok",
-        "equation_FStar.DM4F.Heap.IntStoreFixed.store_size",
-        "equation_Prims.eqtype",
-        "function_token_typing_FStar.DM4F.Heap.IntStoreFixed.heap",
-        "function_token_typing_FStar.DM4F.Heap.IntStoreFixed.store_size",
-        "function_token_typing_Prims.unit", "int_inversion", "int_typing",
+        "equality_tok_Prims.LexTop@tok", "int_typing",
         "primitive_Prims.op_GreaterThan", "primitive_Prims.op_Subtraction",
         "projection_inverse_BoxBool_proj_0",
-        "projection_inverse_BoxInt_proj_0",
-        "refinement_interpretation_Prims_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
-        "unit_inversion", "unit_typing", "well-founded-ordering-on-nat"
+        "projection_inverse_BoxInt_proj_0", "well-founded-ordering-on-nat"
       ],
       0,
-      "cfdfac2af024b742a46991c3585fb1d2"
+      "9579a09b31e7abf6b3bf9a6ed1f60aa8"
     ]
   ]
 ]

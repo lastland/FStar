@@ -3,7 +3,7 @@
   [
     [
       "Bug1150.positive",
-      1,
+      2,
       2,
       1,
       [
@@ -13,11 +13,11 @@
         "projection_inverse_BoxInt_proj_0"
       ],
       0,
-      "d8da4024985fb77b7a74df3885870a2f"
+      "1a5fd579f9fb64ae4a06635d14388d67"
     ],
     [
       "Bug1150.foo",
-      1,
+      2,
       2,
       1,
       [
@@ -27,7 +27,7 @@
         "projection_inverse_BoxInt_proj_0"
       ],
       0,
-      "27cb5dae96f21c43b282da6200f1d44b"
+      "2b5d704513a93390b1eeded9066e4700"
     ]
   ]
 ]

@@ -3,12 +3,12 @@
   [
     [
       "ScopeOfBinderGuard.t",
-      1,
+      2,
       2,
       1,
       [ "@MaxIFuel_assumption", "@query", "bool_inversion" ],
       0,
-      "afd780da538887712529c7686e843aa6"
+      "fded28c0871657307fa7786caed8579c"
     ]
   ]
 ]

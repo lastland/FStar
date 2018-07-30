@@ -3,7 +3,7 @@
   [
     [
       "Bug589.h",
-      1,
+      2,
       2,
       1,
       [
@@ -12,7 +12,7 @@
         "subterm_ordering_Prims.Cons"
       ],
       0,
-      "0daccc8a7681b01fcb9cead17102fe3a"
+      "b9088f8087b1f06ecb9635f1c2f366e7"
     ]
   ]
 ]

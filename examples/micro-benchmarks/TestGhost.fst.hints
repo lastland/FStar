@@ -3,12 +3,12 @@
   [
     [
       "TestGhost.h",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "d98ca2c6ff05ab5d2a0d6a2d7f478d00"
+      "99f55854aabb1a6519062f07375ca8e3"
     ],
     [
       "TestGhost.i",
@@ -17,37 +17,7 @@
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "36206396ab0a831a48fbece139855ea3"
-    ],
-    [
-      "TestGhost.i",
-      2,
-      2,
-      1,
-      [
-        "@query", "function_token_typing_Prims.int",
-        "lemma_FStar.Ghost.hide_reveal"
-      ],
-      0,
-      "38fcf28b4405bd69aca052efd71eaf88"
-    ],
-    [
-      "TestGhost.j",
-      1,
-      2,
-      1,
-      [ "@query", "assumption_Prims.HasEq_int" ],
-      0,
-      "053f698641c46c5b88d738468c4b99c0"
-    ],
-    [
-      "TestGhost.h",
-      2,
-      2,
-      1,
-      [ "@query" ],
-      0,
-      "308c304182c0995efdb222b8788459de"
+      "8f5683f047aa00e47ce4c608488f044f"
     ],
     [
       "TestGhost.i",
@@ -59,16 +29,46 @@
         "lemma_FStar.Ghost.hide_reveal"
       ],
       0,
-      "f45e24c6e9a98d92c8beecb5117e627c"
+      "bc26fc44e2f916145c6d9537ad0bd9df"
     ],
     [
-      "TestGhost.i",
-      4,
+      "TestGhost.j",
+      1,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "9c82e2302f8ce3a9e9063a3fc422923b"
+      "b8552c04d2a11db8c1e121c8999db7cc"
+    ],
+    [
+      "TestGhost.h",
+      4,
+      2,
+      1,
+      [ "@query" ],
+      0,
+      "a60ba2ebc1ccd05776a9cab7e87eb999"
+    ],
+    [
+      "TestGhost.i",
+      6,
+      2,
+      1,
+      [
+        "@query", "function_token_typing_Prims.int",
+        "lemma_FStar.Ghost.hide_reveal"
+      ],
+      0,
+      "14871ce602301684b0538cc5cd6f0a2f"
+    ],
+    [
+      "TestGhost.i",
+      7,
+      2,
+      1,
+      [ "@query", "assumption_Prims.HasEq_int" ],
+      0,
+      "2a8e16283c660feb3cfd4f6df79e02ce"
     ],
     [
       "TestGhost.j",
@@ -77,7 +77,7 @@
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "4c4a3f1584e640582af8a12906358a34"
+      "5b7736eaccfa1f841b217df929bfef19"
     ]
   ]
 ]

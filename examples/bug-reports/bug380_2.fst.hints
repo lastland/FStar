@@ -3,7 +3,7 @@
   [
     [
       "Bug380_2.single_inhabitant_and",
-      1,
+      2,
       2,
       1,
       [
@@ -15,7 +15,7 @@
         "unit_inversion", "unit_typing"
       ],
       0,
-      "94013e49c7152170691d9953ed1e1cd4"
+      "907888d2744391bf70bd897e8c1b3b5e"
     ]
   ]
 ]

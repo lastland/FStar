@@ -3,7 +3,7 @@
   [
     [
       "Bug1361.f",
-      1,
+      2,
       2,
       1,
       [
@@ -13,11 +13,11 @@
         "fuel_guarded_inversion_Prims.list"
       ],
       0,
-      "ba64aa01cd0d01760c14d8cbaba7f6b2"
+      "c09ff9e66570e89ad1bd841f6bdc7e66"
     ],
     [
       "Bug1361.f2",
-      1,
+      2,
       2,
       1,
       [
@@ -25,7 +25,7 @@
         "disc_equation_Prims.Nil", "fuel_guarded_inversion_Prims.list"
       ],
       0,
-      "bc89034fd3b16393886b3adbb2aa2dfa"
+      "dc210b4626f7eb61bc38701b83fa6e80"
     ]
   ]
 ]

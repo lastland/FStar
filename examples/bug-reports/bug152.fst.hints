@@ -3,12 +3,12 @@
   [
     [
       "Bug152.f",
-      1,
+      2,
       2,
       1,
       [ "@query", "projection_inverse_BoxBool_proj_0" ],
       0,
-      "e76cbef3d9442e823e5619a8c82f6763"
+      "ad3a3000200f4b064edaf53bede3019c"
     ]
   ]
 ]

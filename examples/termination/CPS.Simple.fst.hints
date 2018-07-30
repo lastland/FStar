@@ -3,20 +3,6 @@
   [
     [
       "CPS.Simple.add_cps",
-      1,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query",
-        "binder_x_9a691d092aa1033ae30e6c0e5e60237c_2",
-        "disc_equation_Prims.Cons", "disc_equation_Prims.Nil",
-        "fuel_guarded_inversion_Prims.list", "subterm_ordering_Prims.Cons"
-      ],
-      0,
-      "51aaaed26799e5594c1392aab3ebcf0e"
-    ],
-    [
-      "CPS.Simple.add_cps",
       2,
       2,
       1,
@@ -28,6 +14,20 @@
       ],
       0,
       "0a617a7fc3dc36f11eebd1ac833572c3"
+    ],
+    [
+      "CPS.Simple.add_cps",
+      4,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "binder_x_9a691d092aa1033ae30e6c0e5e60237c_2",
+        "disc_equation_Prims.Cons", "disc_equation_Prims.Nil",
+        "fuel_guarded_inversion_Prims.list", "subterm_ordering_Prims.Cons"
+      ],
+      0,
+      "70f2c4ff6d5e31d026a81f7200ef954d"
     ]
   ]
 ]

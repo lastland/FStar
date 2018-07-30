@@ -3,7 +3,7 @@
   [
     [
       "Bug1319b.map_rev",
-      1,
+      2,
       2,
       1,
       [
@@ -12,7 +12,7 @@
         "subterm_ordering_Prims.Cons"
       ],
       0,
-      "e4d33b55496849391308e973a996a281"
+      "c78efbe3d1224df79f7dcc58706078fb"
     ]
   ]
 ]

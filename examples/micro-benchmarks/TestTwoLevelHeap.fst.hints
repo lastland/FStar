@@ -15,7 +15,7 @@
     ],
     [
       "TestTwoLevelHeap.test0",
-      2,
+      3,
       2,
       1,
       [
@@ -55,11 +55,11 @@
         "typing_FStar.Set.union"
       ],
       0,
-      "d24baac579dde7a615040655bc1dd3ae"
+      "b9498ab594fe446e174ffddd06681ede"
     ],
     [
       "TestTwoLevelHeap.test0",
-      3,
+      4,
       2,
       1,
       [
@@ -67,7 +67,7 @@
         "equation_FStar.TwoLevelHeap.rid"
       ],
       0,
-      "f765dcd62ffe13312d781909b0a4acf0"
+      "c90f70875773c3812ffaff68c1be3881"
     ]
   ]
 ]

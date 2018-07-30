@@ -12,12 +12,12 @@
     ],
     [
       "Bug056.xxx",
-      2,
+      3,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "a03c3aa7b2ad303a529e0130ea2c3504"
+      "6002ae7507a8f5a4807c8984f269c1ba"
     ]
   ]
 ]

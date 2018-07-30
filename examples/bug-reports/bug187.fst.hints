@@ -3,7 +3,7 @@
   [
     [
       "Bug187.fail",
-      1,
+      2,
       2,
       1,
       [
@@ -18,16 +18,16 @@
         "typing_FStar.Pervasives.Native.uu___is_Some"
       ],
       0,
-      "5fda30cb5aa44040c7dd564a2ed86a6c"
+      "7e00e6308a54dfebe95acb0033736228"
     ],
     [
       "Bug187.no_fail",
-      1,
+      2,
       2,
       1,
       [ "@query", "projection_inverse_BoxBool_proj_0" ],
       0,
-      "f1518f997d71958b31553a72d9657d95"
+      "9c0d96e5861413aa1da7c0a854c65dba"
     ]
   ]
 ]

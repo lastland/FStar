@@ -3,7 +3,7 @@
   [
     [
       "Bug710.bind_ifc",
-      1,
+      2,
       2,
       1,
       [
@@ -20,11 +20,11 @@
         "typing_FStar.Pervasives.Native.uu___is_Some"
       ],
       0,
-      "142f0946ceaf9942b065bf1de85331c7"
+      "5d018eb534656439fb16dc8fb85cdb5c"
     ],
     [
       "Bug710.left_unit",
-      1,
+      2,
       2,
       1,
       [
@@ -48,7 +48,7 @@
         "typing_Bug710.bind_ifc", "typing_Bug710.return_ifc"
       ],
       0,
-      "3afd551f637720817238d2d07b4f34a2"
+      "eb2736347720b125b36e4575807d3042"
     ]
   ]
 ]

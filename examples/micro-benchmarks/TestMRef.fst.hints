@@ -18,7 +18,7 @@
     ],
     [
       "TestMRef.x",
-      2,
+      3,
       2,
       1,
       [
@@ -29,7 +29,7 @@
         "projection_inverse_BoxBool_proj_0"
       ],
       0,
-      "0c76631bbb0b5e2fddb116b4d2a03826"
+      "bacfd9b89b53d9512ee9432214b285ff"
     ],
     [
       "TestMRef.test_frame_write_ref",
@@ -63,11 +63,11 @@
         "typing_FStar.Monotonic.Heap.addr_of", "typing_FStar.Set.singleton"
       ],
       0,
-      "20eb0f9070dd6523d91469c9979ada23"
+      "1560ce3111c5593491290d3afd20c08c"
     ],
     [
       "TestMRef.test_frame_write_ref",
-      2,
+      4,
       2,
       1,
       [
@@ -99,7 +99,7 @@
         "typing_FStar.Monotonic.Heap.addr_of", "typing_FStar.Set.singleton"
       ],
       0,
-      "174f89754db67fd2ef7fa039ac825110"
+      "89790975c5f7b3728cb684645077b096"
     ],
     [
       "TestMRef.test_frame_write_mref",
@@ -117,11 +117,11 @@
         "refinement_interpretation_Prims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "57c52a6e233eef98d058cc3449ebc6ce"
+      "2bd40380e1fb65f88e6b8d5b2f12063a"
     ],
     [
       "TestMRef.test_frame_write_mref",
-      2,
+      6,
       2,
       1,
       [
@@ -160,7 +160,7 @@
         "typing_FStar.Set.singleton"
       ],
       0,
-      "81614baa1aafdf0fd2a87bff3c8e0a43"
+      "cd5e6525ae6c2c7866a5afe89bc33ec5"
     ],
     [
       "TestMRef.test_frame_alloc_mref",
@@ -175,11 +175,11 @@
         "projection_inverse_BoxBool_proj_0"
       ],
       0,
-      "2fede7e8b371e4f4ebfe9a24b0236004"
+      "51993fda7c8089103069fb87d9d06949"
     ],
     [
       "TestMRef.test_frame_alloc_mref",
-      2,
+      14,
       2,
       1,
       [
@@ -208,7 +208,7 @@
         "typing_FStar.Monotonic.Heap.addr_of", "typing_FStar.Set.empty"
       ],
       0,
-      "6670326b2d9923206dbf41073754c8e9"
+      "a57e3b5611543e81dc3bf0a50c6ec469"
     ],
     [
       "TestMRef.test_write_mref",
@@ -223,11 +223,11 @@
         "projection_inverse_BoxBool_proj_0"
       ],
       0,
-      "47dc9cad3c76208ba62b1e9f38cc0aad"
+      "1875596a509230a1ea6c039494694b68"
     ],
     [
       "TestMRef.test_write_mref",
-      2,
+      5,
       2,
       1,
       [
@@ -246,16 +246,17 @@
         "projection_inverse_BoxInt_proj_0",
         "refinement_interpretation_FStar.ST_Tm_refine_e33ef751d600ad1c7f71142479103c47",
         "refinement_interpretation_Prims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d",
+        "refinement_interpretation_Prims_Tm_refine_f048236b5f8051f83b495ea5eaa6127b",
         "refinement_interpretation_TestMRef_Tm_refine_2f865d88db58e99d5f68c83fd1790f36",
         "refinement_interpretation_TestMRef_Tm_refine_6e521f1f60b3b3282888c7f55292185f",
         "typing_FStar.Monotonic.Heap.addr_of"
       ],
       0,
-      "6b11c9379eca52a30551c18b4a89fb1e"
+      "b6536ef4945e250fed462d26fbeb3c3a"
     ],
     [
       "TestMRef.x",
-      3,
+      5,
       2,
       1,
       [
@@ -266,20 +267,20 @@
         "projection_inverse_BoxBool_proj_0"
       ],
       0,
-      "2ebe6f9e7c05c9e8424849da0c201674"
+      "0a4c0d49a59d2dd1488d4433b8c79fa6"
     ],
     [
       "TestMRef.test_frame_write_ref",
-      3,
+      5,
       2,
       1,
       [ "@query" ],
       0,
-      "5fb36915a07d52ddc33607c6076ed56d"
+      "189fc682a37287f2c21bf8796418d124"
     ],
     [
       "TestMRef.test_frame_write_mref",
-      3,
+      7,
       2,
       1,
       [
@@ -290,14 +291,15 @@
         "interpretation_TestMRef_Tm_abs_f8dfa17d77880939ff7985a9f156690c",
         "primitive_Prims.op_GreaterThanOrEqual",
         "projection_inverse_BoxBool_proj_0",
+        "refinement_interpretation_FStar.Monotonic.Heap_Tm_refine_d6fbc9a334c0ab368ba5e3a78919f4aa",
         "refinement_interpretation_Prims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "3d8c25e491a92deb7aab173d17c90b60"
+      "a523b59682908068bafb828e6dc04fe1"
     ],
     [
       "TestMRef.test_frame_alloc_mref",
-      3,
+      15,
       2,
       1,
       [
@@ -308,11 +310,11 @@
         "projection_inverse_BoxBool_proj_0"
       ],
       0,
-      "319ced005892a401391896a2c16abf5d"
+      "3a8c6ef74bbfc56837139d36e2d10dad"
     ],
     [
       "TestMRef.test_write_mref",
-      3,
+      6,
       2,
       1,
       [
@@ -323,7 +325,7 @@
         "projection_inverse_BoxBool_proj_0"
       ],
       0,
-      "1a04bd5fabf308209fe350271c1e88c4"
+      "b3aa2e1eafbbcde0b881150ded80e61a"
     ]
   ]
 ]

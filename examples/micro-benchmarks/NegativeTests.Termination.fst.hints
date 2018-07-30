@@ -3,7 +3,7 @@
   [
     [
       "NegativeTests.Termination.sumto",
-      1,
+      3,
       2,
       1,
       [
@@ -16,7 +16,7 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "811a48e806c64e9a6c2c71f19be339d4"
+      "4d350619ba766b9d2892efc1e2e6e1e6"
     ],
     [
       "NegativeTests.Termination.snat",
@@ -25,11 +25,11 @@
       1,
       [ "@query" ],
       0,
-      "e18f3ffa9c8936fc1b83ff338eea244a"
+      "0066a420e7a40bf293503a9c373114f2"
     ],
     [
       "NegativeTests.Termination.__proj__S__item___0",
-      1,
+      2,
       2,
       1,
       [
@@ -39,11 +39,11 @@
         "refinement_interpretation_NegativeTests.Termination_Tm_refine_58d69b53f68a55a0902003d29e7d86f7"
       ],
       0,
-      "f8dc3c15439b25c19268f69f98ea5b85"
+      "8237837b9d07fd24e141001e0d31a318"
     ],
     [
       "NegativeTests.Termination.sumto",
-      2,
+      5,
       2,
       1,
       [
@@ -56,7 +56,7 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "639c8a80c4aa44be5ad7cc7a2d30e11c"
+      "89ec7c2f755cb7ea293326bc20eb72a5"
     ],
     [
       "NegativeTests.Termination.snat",
@@ -65,11 +65,11 @@
       1,
       [ "@query" ],
       0,
-      "e553f94072f0dfb4e74aceb74551687b"
+      "5cf7d3e80fcbaa21c58d0c3562b32dee"
     ],
     [
       "NegativeTests.Termination.__proj__S__item___0",
-      2,
+      4,
       2,
       1,
       [
@@ -79,7 +79,7 @@
         "refinement_interpretation_NegativeTests.Termination_Tm_refine_58d69b53f68a55a0902003d29e7d86f7"
       ],
       0,
-      "e65b0c460359547d5673b3a461bd890e"
+      "552ca4050a5900cbfe6ba34d591aab4d"
     ]
   ]
 ]

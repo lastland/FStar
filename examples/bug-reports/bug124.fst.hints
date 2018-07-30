@@ -12,7 +12,7 @@
     ],
     [
       "Bug124.test",
-      2,
+      3,
       2,
       1,
       [
@@ -21,7 +21,7 @@
         "projection_inverse_BoxInt_proj_0"
       ],
       0,
-      "54ce09073a87e706e2977ad408f13aa0"
+      "b044ec8748c318ec3ada04ac9cc824ca"
     ],
     [
       "Bug124.test'",
@@ -30,7 +30,7 @@
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "a5c79cca3b1a22e458a7c404f62e0ba3"
+      "a64aca2cc13bba7ef9db1afc14c01b58"
     ]
   ]
 ]

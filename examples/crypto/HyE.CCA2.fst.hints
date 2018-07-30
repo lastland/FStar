@@ -3,7 +3,7 @@
   [
     [
       "HyE.CCA2.__proj__PKey__item__log",
-      1,
+      2,
       2,
       1,
       [
@@ -11,11 +11,11 @@
         "projection_inverse_HyE.CCA2.PKey_region"
       ],
       0,
-      "d1a4692cdefebc91ce73ea894cfb14a7"
+      "72c85c57536ec6e0d7a71be858299d45"
     ],
     [
       "HyE.CCA2.keygen",
-      1,
+      2,
       2,
       1,
       [
@@ -43,11 +43,11 @@
         "typing_FStar.Monotonic.HyperStack.get_hmap"
       ],
       0,
-      "711d9ba7b59840ad2d046d020e484838"
+      "e4891e2b9a1c82f8f53d1f5ff161b9b8"
     ],
     [
       "HyE.CCA2.encrypt",
-      1,
+      2,
       2,
       1,
       [
@@ -64,11 +64,11 @@
         "haseqPlatform.Bytes_Tm_refine_3458b9f6f40fe62446cdc2c6d3755a94"
       ],
       0,
-      "576f0b79c3f30f527e1bfe45766f1f0c"
+      "db003c3622a157c1919fd15499f89d76"
     ],
     [
       "HyE.CCA2.decrypt",
-      1,
+      3,
       2,
       1,
       [
@@ -80,12 +80,14 @@
         "equation_FStar.HyperStack.ST.is_live_for_rw_in",
         "equation_FStar.HyperStack.ST.m_rref",
         "equation_FStar.HyperStack.ST.mref",
+        "equation_FStar.HyperStack.ST.mreference",
         "equation_FStar.Monotonic.HyperStack.mref",
+        "equation_FStar.Monotonic.HyperStack.mreference",
         "equation_HyE.CCA2.log_t", "equation_HyE.CCA2.rid",
         "equation_HyE.PlainPKE.t", "equation_HyE.RSA.cipher",
         "equation_Platform.Bytes.bytes", "equation_Platform.Bytes.lbytes",
         "equation_Prims.nat",
-        "fuel_guarded_inversion_FStar.Monotonic.HyperStack.mem",
+        "fuel_guarded_inversion_FStar.Monotonic.HyperStack.mreference_",
         "fuel_guarded_inversion_HyE.CCA2.pkey",
         "fuel_guarded_inversion_HyE.CCA2.skey",
         "function_token_typing_HyE.AE.key",
@@ -96,6 +98,7 @@
         "proj_equation_HyE.CCA2.PKey_region",
         "proj_equation_HyE.CCA2.SKey_pk",
         "projection_inverse_BoxBool_proj_0",
+        "refinement_interpretation_FStar.HyperStack.ST_Tm_refine_003cbb363565c5358e7ed8a8d7dba6d4",
         "refinement_interpretation_FStar.HyperStack.ST_Tm_refine_08d14059b664746699a12b0c359d3b8d",
         "refinement_interpretation_FStar.HyperStack.ST_Tm_refine_1a1278f1aecd37594ba20d888b7fd230",
         "refinement_interpretation_FStar.HyperStack.ST_Tm_refine_f596a1e23d65ebe54b463345ece4e00f",
@@ -105,7 +108,7 @@
         "typing_HyE.CCA2.__proj__SKey__item__pk"
       ],
       0,
-      "343d88b2cb09f7ea31bb0aa8b54595cb"
+      "a09269f7800852722e8ce3cf6b533f3b"
     ]
   ]
 ]

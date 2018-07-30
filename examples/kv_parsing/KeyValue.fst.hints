@@ -15,7 +15,7 @@
         "refinement_interpretation_Prims_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
       ],
       0,
-      "c06fefa588370c49a6709c325b2ee35e"
+      "1bb36d8cc50398073571bff9e64f8451"
     ],
     [
       "KeyValue.encoded_entry",
@@ -24,7 +24,7 @@
       1,
       [ "@query" ],
       0,
-      "5ded08ebd92fe32b754631dd61cf4530"
+      "f5b74de61301968ef602146c684299be"
     ],
     [
       "KeyValue.encoded_entry",
@@ -33,7 +33,7 @@
       1,
       [ "@query" ],
       0,
-      "4826a5770fe2214c2df61b74fc3a0615"
+      "4f56cf06493de26a1d64a29e77216fea"
     ],
     [
       "KeyValue.encoded_entry",
@@ -42,7 +42,7 @@
       1,
       [ "@query" ],
       0,
-      "de4e147537b3024e18d84fba6b107cd5"
+      "e9d9613e10a34deb536be5eb8f9d77f8"
     ],
     [
       "KeyValue.encoded_entry",
@@ -60,7 +60,7 @@
         "haseqIntegerParsing_Tm_refine_81c227cb3788ac9527a15eab9f2e5b39"
       ],
       0,
-      "2882b1e3dad0d6123a575141a19a457b"
+      "e1d29ecbab9f14b3dbde54feeb29de85"
     ],
     [
       "KeyValue.encoded_entry",
@@ -80,7 +80,7 @@
         "refinement_interpretation_Prims_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
       ],
       0,
-      "030e3b33842fd99d1c65ba34546d2131"
+      "76fe1851f69efb20871708dc0e62d829"
     ],
     [
       "KeyValue.__proj__EncodedEntry__item__key_len",
@@ -89,7 +89,7 @@
       1,
       [ "@query" ],
       0,
-      "980e376e03573612f0292115de084d1d"
+      "ff597853921493b3b6ecd52782f62e55"
     ],
     [
       "KeyValue.__proj__EncodedEntry__item__key",
@@ -98,11 +98,11 @@
       1,
       [ "@query" ],
       0,
-      "f465e3e9babda2c12a89cc7e7b8b65fd"
+      "c8e21d062c311a1dfd674c15b6a6c280"
     ],
     [
       "KeyValue.__proj__EncodedEntry__item__key",
-      2,
+      3,
       2,
       1,
       [
@@ -110,7 +110,7 @@
         "projection_inverse_KeyValue.EncodedEntry_key_len"
       ],
       0,
-      "9f5856eb1d5738a714c4dd87dfe4d4e1"
+      "4a3c641864d0a1c4155f60a0cda5d786"
     ],
     [
       "KeyValue.__proj__EncodedEntry__item__val_len",
@@ -119,7 +119,7 @@
       1,
       [ "@query" ],
       0,
-      "e90abf94eb069059d1873f51e601ead0"
+      "47a1dceb90ee8294a73daf428e8e30dc"
     ],
     [
       "KeyValue.__proj__EncodedEntry__item__value",
@@ -128,11 +128,11 @@
       1,
       [ "@query" ],
       0,
-      "7438f190ea2481916940995725b171ae"
+      "c1a293a568e799e3a17437f570f9e18b"
     ],
     [
       "KeyValue.__proj__EncodedEntry__item__value",
-      2,
+      3,
       2,
       1,
       [
@@ -140,7 +140,7 @@
         "projection_inverse_KeyValue.EncodedEntry_val_len"
       ],
       0,
-      "e1901a80dca48ec8af242f98da0310f8"
+      "0bda748145feae3759b8e9840a545928"
     ],
     [
       "KeyValue.store",
@@ -149,7 +149,7 @@
       1,
       [ "@query" ],
       0,
-      "ced28856938fdd8a2c4757160bb21ef3"
+      "ee546d4aab451bb786e8858571f3c64d"
     ],
     [
       "KeyValue.store",
@@ -158,7 +158,7 @@
       1,
       [ "@query" ],
       0,
-      "8cd3ad8820922c2a78e76cb4e2e49514"
+      "6d682bb1445c3856fd20f1c1f24b0389"
     ],
     [
       "KeyValue.store",
@@ -173,7 +173,7 @@
         "kinding_KeyValue.encoded_entry@tok"
       ],
       0,
-      "a4a53f61c8998f73ad9a00836635a065"
+      "9ea19fe37b53231c20d29c9a9b569b9b"
     ],
     [
       "KeyValue.store",
@@ -188,7 +188,7 @@
         "kinding_KeyValue.encoded_entry@tok"
       ],
       0,
-      "5f37457cad0178fcafa26c1cc81dfc6f"
+      "d0f9ddd63826c729d4b2d9030e742ba4"
     ],
     [
       "KeyValue.__proj__Store__item__num_entries",
@@ -197,7 +197,7 @@
       1,
       [ "@query" ],
       0,
-      "2620fd69e5e2e0d39a21ed0c10c925de"
+      "d661a13b776bb53db8d377cff63eba90"
     ],
     [
       "KeyValue.__proj__Store__item__entries",
@@ -206,11 +206,11 @@
       1,
       [ "@query" ],
       0,
-      "164e76407fa8ee45768a44b05aed64f6"
+      "12bd3c58fd5ef37e7fd3d687bbb1025d"
     ],
     [
       "KeyValue.__proj__Store__item__entries",
-      2,
+      3,
       2,
       1,
       [
@@ -218,19 +218,21 @@
         "projection_inverse_KeyValue.Store_num_entries"
       ],
       0,
-      "13f797b1ea5dca0b2b3c07ac2bb0126f"
+      "6a1af77192ff6e5d04e7f48d1360a28d"
     ],
     [
       "KeyValue.as_entry",
-      1,
+      2,
       2,
       1,
       [
-        "@query", "equation_FStar.UInt8.byte",
-        "equation_KeyValue.entry_live", "equation_Slice.byte"
+        "@MaxIFuel_assumption", "@query", "equation_FStar.UInt8.byte",
+        "equation_KeyValue.entry_live", "equation_Slice.byte",
+        "fuel_guarded_inversion_FStar.Monotonic.HyperStack.mem",
+        "fuel_guarded_inversion_KeyValue.entry_st"
       ],
       0,
-      "ac8c38e1ec03568a04d56ff42e5dfc08"
+      "2d719e189429354acbbd7fe0beddaef0"
     ],
     [
       "KeyValue.entry",
@@ -246,7 +248,7 @@
         "refinement_interpretation_Prims_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
       ],
       0,
-      "9cded57675afb306e6ea76fcac1cd121"
+      "7448ea374a013fa4bf152710de6a9471"
     ],
     [
       "KeyValue.encoded_entry",
@@ -255,7 +257,7 @@
       1,
       [ "@query" ],
       0,
-      "e9d4d12ee91335737d79626e1dd5a65d"
+      "0b0ddf6f613a8b5bdc5e13f200f12705"
     ],
     [
       "KeyValue.encoded_entry",
@@ -264,7 +266,7 @@
       1,
       [ "@query" ],
       0,
-      "e2e1b3f09f43c5441d25cac706842f1e"
+      "8b828536e29d1045b0a6bac20bc294ca"
     ],
     [
       "KeyValue.encoded_entry",
@@ -273,7 +275,7 @@
       1,
       [ "@query" ],
       0,
-      "732343fb170dc3ff438d31ab95aba5d7"
+      "8d52f341f6a9800cd2c219c1d2d3500e"
     ],
     [
       "KeyValue.encoded_entry",
@@ -291,7 +293,7 @@
         "haseqIntegerParsing_Tm_refine_81c227cb3788ac9527a15eab9f2e5b39"
       ],
       0,
-      "93e4c5ffb06119b73865c70a7ad14a8b"
+      "5f9fe66b7a12548a500a74844a4147a2"
     ],
     [
       "KeyValue.encoded_entry",
@@ -311,7 +313,7 @@
         "refinement_interpretation_Prims_Tm_refine_414d0a9f578ab0048252f8c8f552b99f"
       ],
       0,
-      "cb87faafcf5549adbd87500d55e9f8eb"
+      "c73b6cb108bce73047a268d5e7de8575"
     ],
     [
       "KeyValue.__proj__EncodedEntry__item__key_len",
@@ -320,16 +322,7 @@
       1,
       [ "@query" ],
       0,
-      "00643a97bf80154ac8119e2cd16410f1"
-    ],
-    [
-      "KeyValue.__proj__EncodedEntry__item__key",
-      3,
-      2,
-      1,
-      [ "@query" ],
-      0,
-      "8586ad7c52eb4cbc69308db042b80ed3"
+      "b64de30da2601c666e12ee5ef6bad528"
     ],
     [
       "KeyValue.__proj__EncodedEntry__item__key",
@@ -341,7 +334,19 @@
         "projection_inverse_KeyValue.EncodedEntry_key_len"
       ],
       0,
-      "79085178a4774b7dda0f205c50009fa5"
+      "0dc47ef7933d648e36ba36d46f44285c"
+    ],
+    [
+      "KeyValue.__proj__EncodedEntry__item__key",
+      6,
+      2,
+      1,
+      [
+        "@query", "proj_equation_KeyValue.EncodedEntry_key_len",
+        "projection_inverse_KeyValue.EncodedEntry_key_len"
+      ],
+      0,
+      "42514d289b6e406a63eb7ecafc7c1b83"
     ],
     [
       "KeyValue.__proj__EncodedEntry__item__val_len",
@@ -350,16 +355,7 @@
       1,
       [ "@query" ],
       0,
-      "d53680d7b75dc0ccbaed91cd8d04322c"
-    ],
-    [
-      "KeyValue.__proj__EncodedEntry__item__value",
-      3,
-      2,
-      1,
-      [ "@query" ],
-      0,
-      "2505ee549da965945525ffb7eca82709"
+      "46946bf4498d6733c8889015e8662569"
     ],
     [
       "KeyValue.__proj__EncodedEntry__item__value",
@@ -371,7 +367,19 @@
         "projection_inverse_KeyValue.EncodedEntry_val_len"
       ],
       0,
-      "4ae8b4a8ef1d77797bc8c70b3e5be2f1"
+      "8b847297949cc884056954279bdae0e6"
+    ],
+    [
+      "KeyValue.__proj__EncodedEntry__item__value",
+      6,
+      2,
+      1,
+      [
+        "@query", "proj_equation_KeyValue.EncodedEntry_val_len",
+        "projection_inverse_KeyValue.EncodedEntry_val_len"
+      ],
+      0,
+      "69c4755c7a2651bc3d560831b653b173"
     ],
     [
       "KeyValue.store",
@@ -380,7 +388,7 @@
       1,
       [ "@query" ],
       0,
-      "3cb9a2fc7c44c65c3bbff4e31e11dbdf"
+      "841416467ddad413f1cd61f7c9c22a37"
     ],
     [
       "KeyValue.store",
@@ -389,7 +397,7 @@
       1,
       [ "@query" ],
       0,
-      "907afe3dde17ace33cf88e71d4544eae"
+      "e6e29c0bd651c5e785918aba3de5adf0"
     ],
     [
       "KeyValue.store",
@@ -404,7 +412,7 @@
         "kinding_KeyValue.encoded_entry@tok"
       ],
       0,
-      "f50fefa9fc7187086abb808c60d32a55"
+      "10581727a1a6a90ff6ad8c9a5883dd45"
     ],
     [
       "KeyValue.store",
@@ -419,7 +427,7 @@
         "kinding_KeyValue.encoded_entry@tok"
       ],
       0,
-      "4891ae79bf0d2502b9d1095941bef0e0"
+      "c69df8ae784435bcbde2fc13f4f06299"
     ],
     [
       "KeyValue.__proj__Store__item__num_entries",
@@ -428,16 +436,7 @@
       1,
       [ "@query" ],
       0,
-      "3179d20bdce44ada49c85068de66c3a7"
-    ],
-    [
-      "KeyValue.__proj__Store__item__entries",
-      3,
-      2,
-      1,
-      [ "@query" ],
-      0,
-      "84d5d5c032d25e113a4aa3147d7587fb"
+      "4712bf3d10152a1a8db1aa593ec994d7"
     ],
     [
       "KeyValue.__proj__Store__item__entries",
@@ -449,21 +448,31 @@
         "projection_inverse_KeyValue.Store_num_entries"
       ],
       0,
-      "a9160189df343be32e4d037ee2f329de"
+      "db4f6482349167e8f1272b56312d7c92"
     ],
     [
-      "KeyValue.as_entry",
-      2,
+      "KeyValue.__proj__Store__item__entries",
+      6,
       2,
       1,
       [
-        "@MaxIFuel_assumption", "@query", "equation_FStar.UInt8.byte",
-        "equation_KeyValue.entry_live", "equation_Slice.byte",
-        "fuel_guarded_inversion_FStar.Monotonic.HyperStack.mem",
-        "fuel_guarded_inversion_KeyValue.entry_st"
+        "@query", "proj_equation_KeyValue.Store_num_entries",
+        "projection_inverse_KeyValue.Store_num_entries"
       ],
       0,
-      "8249fdb736934b10fd09fe45aeffef6d"
+      "62401cedbea737cd2a3335f70e403b1c"
+    ],
+    [
+      "KeyValue.as_entry",
+      4,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query", "equation_KeyValue.entry_live",
+        "equation_Slice.byte", "fuel_guarded_inversion_KeyValue.entry_st"
+      ],
+      0,
+      "ccb29ed8086a3d6b23517db4f33c6875"
     ]
   ]
 ]

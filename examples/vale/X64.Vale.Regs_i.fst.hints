@@ -3,7 +3,7 @@
   [
     [
       "X64.Vale.Regs_i.lemma_equal_intro",
-      1,
+      2,
       1,
       0,
       [
@@ -15,11 +15,11 @@
         "typing_tok_X64.Machine_s.Rax@tok"
       ],
       0,
-      "958d3a9bdd66d452dcad0c17ce026aa8"
+      "f2422c39bf43e1bdb10cf6be569d3c8b"
     ],
     [
       "X64.Vale.Regs_i.lemma_equal_elim",
-      1,
+      2,
       1,
       0,
       [
@@ -36,7 +36,7 @@
         "kinding_X64.Machine_s.reg@tok", "typing_tok_X64.Machine_s.Rax@tok"
       ],
       0,
-      "daefcab3642e632227879ea83cdd00fd"
+      "43434a1d7de4ca7e904f2659398de061"
     ]
   ]
 ]

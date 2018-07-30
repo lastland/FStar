@@ -3,7 +3,7 @@
   [
     [
       "Bijection.lemma_inverses_bij",
-      1,
+      2,
       2,
       1,
       [
@@ -13,7 +13,7 @@
         "equation_Bijection.inverses", "equation_Bijection.surjection"
       ],
       0,
-      "7d72e201fba59e9a8dd0506aa0be5bf9"
+      "6412a6a606a94664dc9e84bd2c406115"
     ]
   ]
 ]

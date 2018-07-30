@@ -12,7 +12,7 @@
     ],
     [
       "Bug405.g",
-      2,
+      3,
       2,
       1,
       [
@@ -21,7 +21,7 @@
         "unit_inversion", "unit_typing"
       ],
       0,
-      "78dc2ed7d946c945e5fc1ac7d8ef2a63"
+      "26cd3eac546cde0db899b1d3ed23583f"
     ],
     [
       "Bug405.v",
@@ -30,7 +30,7 @@
       1,
       [ "@query", "assumption_Prims.HasEq_unit" ],
       0,
-      "72dc9b995521571b8944667a3a4526b7"
+      "4e2a235b2d0dd7a2a72d326101e0c7d5"
     ]
   ]
 ]

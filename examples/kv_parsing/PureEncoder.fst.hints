@@ -3,16 +3,16 @@
   [
     [
       "PureEncoder.encode_entry",
-      1,
+      2,
       2,
       1,
       [ "@query", "equation_FStar.UInt8.byte", "equation_Slice.byte" ],
       0,
-      "5f05c34fe3e543a4b01cf8bc18b6380b"
+      "88fbe8a93e2b74209b7155f9a3d43812"
     ],
     [
       "PureEncoder.encode_store",
-      1,
+      2,
       2,
       1,
       [
@@ -30,20 +30,20 @@
         "typing_KeyValue.__proj__Store__item__num_entries"
       ],
       0,
-      "fe01c109547e9d24b72d95d2cb6434f5"
+      "dc3958d715d0be0e3ef15f76f86fbbab"
     ],
     [
       "PureEncoder.encode_entry",
-      2,
+      4,
       2,
       1,
-      [ "@query", "equation_FStar.UInt8.byte", "equation_Slice.byte" ],
+      [ "@query", "equation_Slice.byte" ],
       0,
-      "32a60fb50528f5c82625739d4effa15b"
+      "f86e1922f2da39dd678258fec1bff496"
     ],
     [
       "PureEncoder.encode_store",
-      2,
+      4,
       2,
       1,
       [
@@ -61,7 +61,7 @@
         "typing_KeyValue.__proj__Store__item__num_entries"
       ],
       0,
-      "d15d76341b63df47ca9999cabc8d89c3"
+      "52500b8034f3770917fd96d12b17438a"
     ]
   ]
 ]

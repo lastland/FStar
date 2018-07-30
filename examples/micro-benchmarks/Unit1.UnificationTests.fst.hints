@@ -3,7 +3,7 @@
   [
     [
       "Unit1.UnificationTests.t_indexed",
-      1,
+      2,
       2,
       1,
       [
@@ -13,11 +13,11 @@
         "fuel_guarded_inversion_Unit1.UnificationTests.some_enum"
       ],
       0,
-      "1df67b81ae6d89e333f27f7268111b3b"
+      "aa99e26684fbed5e0895a0492ead4ecb"
     ],
     [
       "Unit1.UnificationTests.t_indexed",
-      2,
+      4,
       2,
       1,
       [
@@ -27,7 +27,7 @@
         "fuel_guarded_inversion_Unit1.UnificationTests.some_enum"
       ],
       0,
-      "3a045b1bcdfc580a490e9d38b8c1dbf5"
+      "2ee02e704ca58ea8c2cf59c219e2f1be"
     ]
   ]
 ]

@@ -3,12 +3,12 @@
   [
     [
       "Opaque_i.reveal_opaque",
-      1,
+      2,
       1,
       0,
       [ "@query", "equation_Opaque_i.make_opaque" ],
       0,
-      "13b5dae6ce056ab573b6a5391d852edb"
+      "6024fb6826dcbbee68f9f661a3ad0fcf"
     ]
   ]
 ]

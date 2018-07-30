@@ -3,7 +3,7 @@
   [
     [
       "Bug125.test",
-      1,
+      2,
       2,
       1,
       [
@@ -11,7 +11,7 @@
         "projection_inverse_BoxInt_proj_0"
       ],
       0,
-      "bcdcf59307f572cd4ee1a11e4fe6c116"
+      "bd985f75af1dd5237e7d3a4713311048"
     ]
   ]
 ]

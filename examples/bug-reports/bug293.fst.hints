@@ -12,19 +12,16 @@
     ],
     [
       "Bug293.test",
-      2,
+      5,
       2,
       1,
-      [
-        "@MaxIFuel_assumption", "@query", "assumption_Prims.HasEq_int",
-        "refinement_interpretation_Bug293_Tm_refine_24a102650c3561bc6be37068de08feda"
-      ],
+      [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "ec58d0efe93a95c9c1970330ad059290"
+      "c2101d32e02e9fa36a390bec7690457a"
     ],
     [
       "Bug293.test",
-      3,
+      6,
       2,
       1,
       [
@@ -32,7 +29,7 @@
         "refinement_interpretation_Bug293_Tm_refine_24a102650c3561bc6be37068de08feda"
       ],
       0,
-      "bb0429ac27554443de39e2a3501234b0"
+      "fc931a37ea3911eb98ed64c831436d85"
     ]
   ]
 ]

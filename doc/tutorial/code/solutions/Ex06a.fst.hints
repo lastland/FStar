@@ -3,21 +3,6 @@
   [
     [
       "Ex06a.partition",
-      1,
-      2,
-      1,
-      [
-        "@MaxIFuel_assumption", "@query",
-        "binder_x_0a56e3de562c08d8ab59f4ac6f626a98_3",
-        "constructor_distinct_Prims.Nil", "disc_equation_Prims.Cons",
-        "disc_equation_Prims.Nil", "fuel_guarded_inversion_Prims.list",
-        "projection_inverse_Prims.Cons_tl", "subterm_ordering_Prims.Cons"
-      ],
-      0,
-      "9654a1e3014c0e3576a54c247fa289dc"
-    ],
-    [
-      "Ex06a.partition",
       2,
       2,
       1,
@@ -29,6 +14,20 @@
       ],
       0,
       "69fb09351810855ac6b0d496424c2ed2"
+    ],
+    [
+      "Ex06a.partition",
+      4,
+      2,
+      1,
+      [
+        "@MaxIFuel_assumption", "@query",
+        "binder_x_0a56e3de562c08d8ab59f4ac6f626a98_3",
+        "disc_equation_Prims.Cons", "disc_equation_Prims.Nil",
+        "fuel_guarded_inversion_Prims.list", "subterm_ordering_Prims.Cons"
+      ],
+      0,
+      "68f8da501dacf3f624ecf08dff393dbd"
     ]
   ]
 ]

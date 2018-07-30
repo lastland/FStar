@@ -3,21 +3,21 @@
   [
     [
       "Ex12a1.Cap.capRead",
-      1,
-      2,
-      1,
-      [ "@query", "assumption_Platform.Bytes.HasEq_bytes" ],
-      0,
-      "a32e1100cfa8174bf777d6f45fa60e99"
-    ],
-    [
-      "Ex12a1.Cap.capRead",
       2,
       2,
       1,
       [ "@query", "assumption_Platform.Bytes.HasEq_bytes" ],
       0,
       "8b3e056c39c42e08c7396f0a4ae5a6dc"
+    ],
+    [
+      "Ex12a1.Cap.capRead",
+      4,
+      2,
+      1,
+      [ "@query", "assumption_Platform.Bytes.HasEq_bytes" ],
+      0,
+      "d0803cf49f7ab57cc25b27d6ff915863"
     ]
   ]
 ]

@@ -3,12 +3,12 @@
   [
     [
       "Bug1345b.bar",
-      1,
+      2,
       2,
       1,
       [ "@query", "projection_inverse_BoxInt_proj_0" ],
       0,
-      "0a3c7cb99987454c8082af0bc2222ba3"
+      "e29ab652a050cb9c7f647e6230268254"
     ]
   ]
 ]

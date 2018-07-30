@@ -3,21 +3,21 @@
   [
     [
       "Bug424.t",
-      1,
+      2,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_unit" ],
       0,
-      "7df54b79bd21780d0bb8f59229557706"
+      "13a7a9a644686d1360d72c1669c62ade"
     ],
     [
       "Bug424.get",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "1a234dc16bb21ed2f39a363453d4d3c5"
+      "7b425dd284bbd71cc249a12bd54fcd27"
     ]
   ]
 ]

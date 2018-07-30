@@ -8,11 +8,11 @@
       1,
       [ "@query" ],
       0,
-      "26739b9ae24110e033b4341f178b6cbd"
+      "f7b262528e691693f4d7a4d95abd9c8f"
     ],
     [
       "Bug260.__proj__S__item___0",
-      1,
+      2,
       2,
       1,
       [
@@ -21,7 +21,7 @@
         "refinement_interpretation_Bug260_Tm_refine_157a25d7c8423b184ee7d22a138c6995"
       ],
       0,
-      "d50dbc106e2cf98349ca7b625485d4fb"
+      "3daf7698143b90bda0feae6ffd7f27e6"
     ],
     [
       "Bug260.validity",
@@ -30,7 +30,7 @@
       1,
       [ "@query", "assumption_Bug260.pnat__uu___haseq" ],
       0,
-      "3ccca2ac2aaa74aabef6f271a49b5b3a"
+      "566992be56a48bc70218df7b2d99778d"
     ],
     [
       "Bug260.validity'",
@@ -39,11 +39,11 @@
       1,
       [ "@query", "assumption_Bug260.pnat__uu___haseq" ],
       0,
-      "074d92db271096c9c5cdd451e13d5b24"
+      "025304208cf68e0b97e3b64c8d58da70"
     ],
     [
       "Bug260.__proj__VSucc'__item___1",
-      1,
+      2,
       2,
       1,
       [
@@ -51,11 +51,11 @@
         "projection_inverse_Bug260.VSucc__n"
       ],
       0,
-      "ff69656ff282b0215b389d6d2e0f5de8"
+      "9f7482f0e445cfb462801019c0ba9a26"
     ],
     [
       "Bug260.validity'_empty",
-      1,
+      2,
       2,
       1,
       [
@@ -66,7 +66,7 @@
         "projection_inverse_Bug260.VSucc__n", "subterm_ordering_Bug260.S"
       ],
       0,
-      "1b1bf653e6bf285893fadb01227cfaf7"
+      "715cd593e2738b89febe556fe4087b7f"
     ]
   ]
 ]

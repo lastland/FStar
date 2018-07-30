@@ -3,16 +3,16 @@
   [
     [
       "Bug517.new_int",
-      1,
+      2,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "72eace427411c51a691487256c146a14"
+      "8688b3f21c6c2380d32c5b533069b886"
     ],
     [
       "Bug517.add",
-      1,
+      2,
       2,
       1,
       [
@@ -21,11 +21,11 @@
         "refinement_interpretation_FStar.Pervasives.Native_Tm_refine_2fbd657fe85bcb2423f9c7e5f9b3bcb5"
       ],
       0,
-      "fb785b1cec3a9ed5175dbebb9747ff94"
+      "af4a3c4448da3a17a43b64cd20c06a2e"
     ],
     [
       "Bug517.add'",
-      1,
+      2,
       2,
       1,
       [
@@ -34,7 +34,7 @@
         "refinement_interpretation_FStar.Pervasives.Native_Tm_refine_2fbd657fe85bcb2423f9c7e5f9b3bcb5"
       ],
       0,
-      "ac0b067d535a4980d45ed64c468778b8"
+      "f8d3fc1eea126f86c28f57eac06a38c5"
     ]
   ]
 ]

@@ -3,7 +3,7 @@
   [
     [
       "Ex04c.append",
-      1,
+      2,
       2,
       1,
       [
@@ -13,11 +13,11 @@
         "fuel_guarded_inversion_Prims.list", "subterm_ordering_Prims.Cons"
       ],
       0,
-      "0388df46f12e858b6aecb45740a552f7"
+      "a2830198a51c4671d531433bee6c5b3b"
     ],
     [
       "Ex04c.mem",
-      1,
+      2,
       2,
       1,
       [
@@ -28,11 +28,11 @@
         "subterm_ordering_Prims.Cons"
       ],
       0,
-      "567dce77caa79b88c4bafefb185d60e6"
+      "d02ee1b69e0a240ccd8521fee0ff2e0d"
     ],
     [
       "Ex04c.append_mem",
-      1,
+      2,
       2,
       1,
       [
@@ -56,15 +56,16 @@
         "projection_inverse_Prims.Cons_hd",
         "projection_inverse_Prims.Cons_tl", "projection_inverse_Prims.Nil_a",
         "refinement_interpretation_Prims_Tm_refine_414d0a9f578ab0048252f8c8f552b99f",
-        "subterm_ordering_Prims.Cons", "typing_Ex04c.append",
-        "typing_Ex04c.mem"
+        "subterm_ordering_Prims.Cons",
+        "token_correspondence_Ex04c.mem.fuel_instrumented",
+        "typing_Ex04c.append", "typing_Ex04c.mem"
       ],
       0,
-      "9366cc436394f359ef033f7bebbb905a"
+      "bafee77fc0f0295bb6924812196fd2a1"
     ],
     [
       "Ex04c.append",
-      2,
+      4,
       2,
       1,
       [
@@ -74,22 +75,22 @@
         "fuel_guarded_inversion_Prims.list", "subterm_ordering_Prims.Cons"
       ],
       0,
-      "2dd04b6b5f6e7946503f05f6f163961f"
+      "8abfaa9ca6bf2c3be2e64cac6eba5392"
     ],
     [
       "Ex04c.mem",
-      2,
+      4,
       2,
       1,
       [
         "@MaxIFuel_assumption", "@query",
         "binder_x_63893f6163361bb7b4db46296cfdfc01_3",
         "disc_equation_Prims.Cons", "disc_equation_Prims.Nil",
-        "equality_tok_Prims.LexTop@tok", "fuel_guarded_inversion_Prims.list",
-        "subterm_ordering_Prims.Cons"
+        "equality_tok_Prims.LexTop@tok", "equation_Prims.eqtype",
+        "fuel_guarded_inversion_Prims.list", "subterm_ordering_Prims.Cons"
       ],
       0,
-      "8d32195c2b1171eccf6ddf9fe5ec8263"
+      "d4d4a24d7e649c949b99b06e142ffe81"
     ]
   ]
 ]

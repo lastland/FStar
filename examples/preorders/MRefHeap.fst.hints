@@ -3,16 +3,16 @@
   [
     [
       "MRefHeap.contains",
-      1,
+      2,
       2,
       1,
       [ "@query", "equation_FStar.Pervasives.dfst" ],
       0,
-      "363db3d3fdbc78ee5398b6fc4fb4a7b3"
+      "f836a0b58abcd25eb444d758c79f7a59"
     ],
     [
       "MRefHeap.contains_same_addr_lemma",
-      1,
+      4,
       2,
       1,
       [
@@ -29,11 +29,11 @@
         "refinement_interpretation_Prims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "bb7c2303a67804f0086da3f14e254f21"
+      "c9e42ff608940a46d4fe47d8a9d5ad52"
     ],
     [
       "MRefHeap.contains_diff_addr_lemma",
-      1,
+      3,
       2,
       1,
       [
@@ -46,11 +46,11 @@
         "refinement_interpretation_Prims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "1a9a63155a4cc933990d38a1d34781d3"
+      "851929e5992b7e91325caa9d77883c7e"
     ],
     [
       "MRefHeap.sel",
-      1,
+      2,
       2,
       1,
       [
@@ -67,7 +67,7 @@
         "refinement_interpretation_MRefHeap_Tm_refine_36453e3eb6145226f640e16ed9612466"
       ],
       0,
-      "d611449b463dd80effbc84bfcc9bcc05"
+      "4c7c30f2c60bb07331d133f329159057"
     ],
     [
       "MRefHeap.alloc_ref",
@@ -79,11 +79,11 @@
         "refinement_interpretation_MRefHeap_Tm_refine_36453e3eb6145226f640e16ed9612466"
       ],
       0,
-      "eb75b089de8ef8f41ce3a107daedcc12"
+      "7d4e2d71a88c904e0e103af837d8c97e"
     ],
     [
       "MRefHeap.alloc_ref",
-      2,
+      4,
       2,
       1,
       [
@@ -132,7 +132,7 @@
         "typing_FStar.Pervasives.Native.snd"
       ],
       0,
-      "bfdc9299a1b49a1d7a03f3e25608a373"
+      "c741c0cebf1ffe91accbe08007c6e6f9"
     ],
     [
       "MRefHeap.upd",
@@ -144,11 +144,11 @@
         "refinement_interpretation_MRefHeap_Tm_refine_36453e3eb6145226f640e16ed9612466"
       ],
       0,
-      "fae0fb4bfe5d90e56eeb568e7fd785fa"
+      "87465b35b756449d27d21a3063b91f52"
     ],
     [
       "MRefHeap.upd",
-      2,
+      4,
       2,
       1,
       [
@@ -192,11 +192,11 @@
         "token_correspondence_FStar.Pervasives.Native.snd"
       ],
       0,
-      "d923f791e5b55c67aaa39c936d22ec40"
+      "2a6920cbfbb7078ef7cc3be5fde1d096"
     ],
     [
       "MRefHeap.emp",
-      1,
+      2,
       2,
       1,
       [
@@ -213,11 +213,11 @@
         "token_correspondence_FStar.Pervasives.Native.snd"
       ],
       0,
-      "23f26423d8355dc9a45088d35671c966"
+      "89fe7f7de98b34747a2b2202b9a11c22"
     ],
     [
       "MRefHeap.contains_same_addr_lemma",
-      2,
+      5,
       2,
       1,
       [
@@ -225,11 +225,11 @@
         "haseqPrims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "cf1993d3aaa3dbaea0a0eda8d3c8865c"
+      "60a67d78d602aa3e879943a79c5a3087"
     ],
     [
       "MRefHeap.contains_diff_addr_lemma",
-      2,
+      4,
       2,
       1,
       [
@@ -237,11 +237,11 @@
         "haseqPrims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "5446ba82fc86aab4ba5cfafd36f52113"
+      "5f0f2e709904497af87ed76ba7953ddc"
     ],
     [
       "MRefHeap.alloc_ref",
-      3,
+      5,
       2,
       1,
       [
@@ -249,11 +249,11 @@
         "refinement_interpretation_MRefHeap_Tm_refine_36453e3eb6145226f640e16ed9612466"
       ],
       0,
-      "42d444648c3166aa708e2f67d791be1e"
+      "974efd92c031733ec15fe2dc96ae17fc"
     ],
     [
       "MRefHeap.upd",
-      3,
+      5,
       2,
       1,
       [
@@ -261,7 +261,7 @@
         "refinement_interpretation_MRefHeap_Tm_refine_36453e3eb6145226f640e16ed9612466"
       ],
       0,
-      "fc96e97ed2e9552b49e783c6d420d903"
+      "78fea0e581331e9aa53d079d3607ef86"
     ]
   ]
 ]

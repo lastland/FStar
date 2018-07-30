@@ -3,16 +3,16 @@
   [
     [
       "Ex12a2.Cap.capRead",
-      1,
+      2,
       2,
       1,
       [ "@query", "assumption_Platform.Bytes.HasEq_bytes" ],
       0,
-      "d34fbfd8b180f1d31aebfc2cc8715fd8"
+      "66a2f516804eed07ed4270b8c497946b"
     ],
     [
       "Ex12a2.Cap.issue_read",
-      1,
+      2,
       2,
       1,
       [
@@ -39,11 +39,11 @@
         "typing_Platform.Bytes.equalBytes", "typing_Platform.Bytes.utf8"
       ],
       0,
-      "24cd57c4d07f5b83c97ff8809e17181b"
+      "32081bb44df1a402b636a812c1823df5"
     ],
     [
       "Ex12a2.Cap.redeem_read",
-      1,
+      2,
       2,
       1,
       [
@@ -53,20 +53,20 @@
         "string_inversion"
       ],
       0,
-      "503c8eab2f014402d7ebb0e113c60367"
+      "a4209066d3d1d8e6fd60538679ad7e75"
     ],
     [
       "Ex12a2.Cap.capWrite",
-      1,
+      2,
       2,
       1,
       [ "@query", "assumption_Platform.Bytes.HasEq_bytes" ],
       0,
-      "31db4e1f65fa031d92df9bf7af25b3f3"
+      "ccd47a26cb5fb98905940af33b9e1cde"
     ],
     [
       "Ex12a2.Cap.issue_write",
-      1,
+      2,
       2,
       1,
       [
@@ -94,11 +94,11 @@
         "typing_Platform.Bytes.equalBytes", "typing_Platform.Bytes.utf8"
       ],
       0,
-      "be8330f5e704695dcf941f600cf4f40e"
+      "835404c4262d0cce2606f34bb712e3c4"
     ],
     [
       "Ex12a2.Cap.redeem_write",
-      1,
+      2,
       2,
       1,
       [
@@ -108,25 +108,25 @@
         "string_inversion"
       ],
       0,
-      "649f96504805ffe59f9b700a00001c52"
+      "0886a888b5d6a34455acc55d85a0bcf9"
     ],
     [
       "Ex12a2.Cap.capRead",
-      2,
+      4,
       2,
       1,
       [ "@query", "assumption_Platform.Bytes.HasEq_bytes" ],
       0,
-      "b155dfe8dc763e8d8f70cb70e3157257"
+      "95f2f1fe321d37d554d64465818aa7e9"
     ],
     [
       "Ex12a2.Cap.capWrite",
-      2,
+      4,
       2,
       1,
       [ "@query", "assumption_Platform.Bytes.HasEq_bytes" ],
       0,
-      "2ee52fcdb6fe0ff7378652f045274eb3"
+      "e97d788331ec88436bc21da91d78dc9b"
     ]
   ]
 ]

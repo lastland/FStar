@@ -3,16 +3,16 @@
   [
     [
       "Benton2004.RHL.Examples2.phi",
-      1,
+      4,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "2ef1b14e45df9c0f95940d2e5509028d"
+      "eab653e35d288f6fe184c4b8d7201a7c"
     ],
     [
       "Benton2004.RHL.Examples2.proof",
-      1,
+      4,
       4,
       2,
       [
@@ -42,12 +42,11 @@
         "equation_Benton2004.RHL.geq", "equation_Benton2004.RHL.gexp",
         "equation_Benton2004.RHL.gnot", "equation_Benton2004.RHL.gop",
         "equation_Benton2004.RHL.gor", "equation_Benton2004.RHL.gsubst",
-        "equation_Benton2004.RHL.gvar", "equation_Benton2004.RHL.included",
-        "equation_Benton2004.assign", "equation_Benton2004.const",
-        "equation_Benton2004.evar", "equation_Benton2004.included",
+        "equation_Benton2004.RHL.gvar", "equation_Benton2004.assign",
+        "equation_Benton2004.const", "equation_Benton2004.evar",
         "equation_Benton2004.seq", "equation_Benton2004.var",
         "equation_Benton2004.while",
-        "equation_FStar.DM4F.Heap.IntStoreFixed.upd", "equation_Prims.eq2",
+        "equation_FStar.DM4F.Heap.IntStoreFixed.sel", "equation_Prims.eq2",
         "equation_Prims.eqtype", "equation_Prims.squash",
         "equation_with_fuel_FStar.List.Tot.Base.mem.fuel_instrumented",
         "equation_with_fuel_FStar.List.Tot.Base.noRepeats.fuel_instrumented",
@@ -60,10 +59,8 @@
         "function_token_typing_Benton2004.RHL.Examples2.n",
         "function_token_typing_Benton2004.RHL.Examples2.x",
         "function_token_typing_Benton2004.RHL.Examples2.y",
-        "function_token_typing_Benton2004.var",
         "function_token_typing_FStar.DM4F.Heap.IntStoreFixed.id",
-        "function_token_typing_Prims.bool",
-        "function_token_typing_Prims.int", "int_typing",
+        "function_token_typing_Prims.bool", "int_typing",
         "interpretation_Benton2004.RHL_Tm_abs_0effe3cbb6c239380620b194b31c8624",
         "interpretation_Benton2004.RHL_Tm_abs_217dc39f20e932774574ae244c79948b",
         "interpretation_Benton2004.RHL_Tm_abs_3f7e5aeb06b289102e285de2b7bf9058",
@@ -81,9 +78,8 @@
         "lemma_Benton2004.RHL.gsubst_geq", "lemma_Benton2004.RHL.gsubst_gop",
         "lemma_Benton2004.RHL.gsubst_gvar_other",
         "lemma_Benton2004.RHL.gsubst_gvar_same",
-        "lemma_Benton2004.RHL.holds_gand",
-        "lemma_Benton2004.RHL.holds_interp",
         "lemma_Benton2004.RHL.included_alt", "lemma_Benton2004.RHL.r_sub",
+        "lemma_FStar.DM4F.Heap.IntStoreFixed.lemma_index_upd1",
         "primitive_Prims.op_Addition", "primitive_Prims.op_AmpAmp",
         "primitive_Prims.op_Equality", "primitive_Prims.op_LessThan",
         "primitive_Prims.op_Negation", "projection_inverse_BoxBool_proj_0",
@@ -98,27 +94,28 @@
         "token_correspondence_Prims.op_Equality",
         "token_correspondence_Prims.op_LessThan",
         "typing_Benton2004.RHL.exp_to_gexp", "typing_Benton2004.RHL.gand",
-        "typing_Benton2004.RHL.gconst", "typing_Benton2004.RHL.gsubst",
+        "typing_Benton2004.RHL.gconst", "typing_Benton2004.RHL.gnot",
+        "typing_Benton2004.RHL.gor", "typing_Benton2004.RHL.gsubst",
         "typing_Benton2004.RHL.gvar",
-        "typing_Benton2004.RHL_Tm_abs_217dc39f20e932774574ae244c79948b",
         "typing_Benton2004.RHL_Tm_abs_3f7e5aeb06b289102e285de2b7bf9058",
         "typing_Benton2004.RHL_Tm_abs_6a2334cc10426cc47a444030753c0ffa",
+        "typing_Benton2004.RHL_Tm_abs_f0bd5dd2252014b6441ed6d5b244b2ca",
         "typing_Benton2004.assign", "typing_Benton2004.const",
         "typing_Benton2004.evar", "typing_Benton2004.seq",
         "typing_Benton2004.while", "typing_tok_Benton2004.RHL.Left@tok",
         "typing_tok_Benton2004.RHL.Right@tok"
       ],
       0,
-      "1d7066600fff013647d1a1f1c16a784e"
+      "45107ac7744a692c3f3d0bf89e3957b3"
     ],
     [
       "Benton2004.RHL.Examples2.phi",
-      2,
+      6,
       2,
       1,
       [ "@query", "assumption_Prims.HasEq_int" ],
       0,
-      "e0253b316ded0913b33a4afad034ee99"
+      "bafdeba5d663bbfd2be764ac356fed7a"
     ]
   ]
 ]

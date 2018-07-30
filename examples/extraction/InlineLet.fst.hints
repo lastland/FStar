@@ -3,12 +3,12 @@
   [
     [
       "InlineLet.pkg_of_local_pkg",
-      1,
+      2,
       2,
       1,
       [
         "@MaxIFuel_assumption", "@query",
-        "Prims_pretyping_ae567c2fb75be05905677af440075565", "bool_inversion",
+        "Prims_pretyping_ae567c2fb75be05905677af440075565",
         "equation_FStar.Heap.trivial_preorder",
         "equation_FStar.Heap.trivial_rel",
         "equation_FStar.HyperStack.ST.equal_domains",
@@ -54,11 +54,10 @@
         "typing_FStar.Monotonic.HyperStack.frameOf",
         "typing_FStar.Monotonic.HyperStack.get_hmap",
         "typing_FStar.Monotonic.HyperStack.get_rid_ctr",
-        "typing_FStar.Monotonic.HyperStack.get_tip",
-        "typing_FStar.Monotonic.HyperStack.is_mm"
+        "typing_FStar.Monotonic.HyperStack.get_tip"
       ],
       0,
-      "112b27457bace6353ef7804e39c8137b"
+      "51d4cc2ac90d2124fa57fa7eed2cd9d4"
     ]
   ]
 ]

@@ -3,7 +3,7 @@
   [
     [
       "Bug623.null",
-      1,
+      2,
       2,
       1,
       [
@@ -12,7 +12,7 @@
         "function_token_typing_Prims.unit"
       ],
       0,
-      "edf704e5e1f3eaa3a159c93ac1f36549"
+      "1074038fb0e4ae304f37a442249bd351"
     ]
   ]
 ]

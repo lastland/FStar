@@ -3,7 +3,7 @@
   [
     [
       "Bug613.l",
-      1,
+      2,
       2,
       1,
       [
@@ -11,11 +11,11 @@
         "function_token_typing_Bug613.g"
       ],
       0,
-      "1619ab13c67431a26f02f75e80bdd984"
+      "35115c962201fe5f19c89d0b610365c8"
     ],
     [
       "Bug613.l'",
-      1,
+      2,
       2,
       1,
       [
@@ -23,11 +23,11 @@
         "function_token_typing_Bug613.g"
       ],
       0,
-      "ee43ed19792323a1c7f9f9c31e4ff2d6"
+      "8b46d81446ffbb2bf4b8f1d628def72a"
     ],
     [
       "Bug613.l''",
-      1,
+      2,
       2,
       1,
       [
@@ -35,11 +35,11 @@
         "function_token_typing_Bug613.h"
       ],
       0,
-      "3df3dd0a29abe953f71aeace10861ed0"
+      "6311fd551d6b64ce8fc631c370fd6dcc"
     ],
     [
       "Bug613.test_i",
-      1,
+      2,
       2,
       1,
       [
@@ -47,7 +47,7 @@
         "function_token_typing_Bug613.i1"
       ],
       0,
-      "d5a25d3672cc09a400841823f3632c93"
+      "03e33d8bd9d10c253b1ca725d957e9d2"
     ]
   ]
 ]

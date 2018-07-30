@@ -3,7 +3,7 @@
   [
     [
       "Bug844.__proj__MkR__item__inv",
-      1,
+      2,
       2,
       1,
       [
@@ -13,11 +13,11 @@
         "token_correspondence_Bug844.__proj__MkR__item__j"
       ],
       0,
-      "c41feead177e302fa8c1915fe416df40"
+      "7a13cf7514f836c870e018d22df43f6f"
     ],
     [
       "Bug844.__proj__MkC__item__inv2",
-      1,
+      2,
       2,
       1,
       [
@@ -28,20 +28,19 @@
         "token_correspondence_Bug844.__proj__MkC__item__j2"
       ],
       0,
-      "8c6ac3ef4a3c60deb6ed716b0015d19d"
+      "2940a58d9c4361c66d98113454209c78"
     ],
     [
       "Bug844.l1",
-      1,
+      2,
       2,
       1,
       [
         "@MaxIFuel_assumption", "@query", "disc_equation_Prims.Left",
-        "disc_equation_Prims.Right", "equation_Prims.l_not",
-        "fuel_guarded_inversion_Prims.c_or"
+        "disc_equation_Prims.Right", "fuel_guarded_inversion_Prims.c_or"
       ],
       0,
-      "056e582553bde80bde9b9db90a4947bc"
+      "cfbdb2e34a2e9e16d82d95bc7ddc23b9"
     ]
   ]
 ]

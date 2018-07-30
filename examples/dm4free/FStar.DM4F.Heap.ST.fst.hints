@@ -3,21 +3,21 @@
   [
     [
       "FStar.DM4F.Heap.ST._dm4f_STATE___proj__STATE__item__get_elab",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "e10226cd71e23c0890a2ec9ea56985d2"
+      "0ccd27f4b3171c4cb88da34102785c7c"
     ],
     [
       "FStar.DM4F.Heap.ST._dm4f_STATE___proj__STATE__item__put_elab",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "f78f10e39019e854c99cb2ab2f63c27c"
+      "514d6123ead98d82f4660516adf6761a"
     ],
     [
       "FStar.DM4F.Heap.ST.STATE",
@@ -26,7 +26,7 @@
       1,
       [ "@query" ],
       0,
-      "fc446a614281954ebae0b78f27389f01"
+      "e00e14f9cd022753bb5a20c692e825af"
     ],
     [
       "FStar.DM4F.Heap.ST.STATE",
@@ -35,11 +35,11 @@
       1,
       [ "@query" ],
       0,
-      "989c2484e773c722b920c937d6741d62"
+      "058512f348d5d2e2e36d9396d83d587a"
     ],
     [
       "FStar.DM4F.Heap.ST.alloc",
-      1,
+      3,
       2,
       1,
       [
@@ -55,11 +55,11 @@
         "projection_inverse_FStar.Pervasives.Native.Mktuple2__2"
       ],
       0,
-      "94dc333d079987b9ea061509e77186e8"
+      "51eb20f62a2c8f48863e944b91f40ee3"
     ],
     [
       "FStar.DM4F.Heap.ST.alloc_weak",
-      1,
+      2,
       2,
       1,
       [
@@ -69,11 +69,11 @@
         "projection_inverse_FStar.Pervasives.Native.Mktuple2__2"
       ],
       0,
-      "91d85d7a90106f4bdd8288df478b5d4c"
+      "ba8386d9013834080af27bd931866b20"
     ],
     [
       "FStar.DM4F.Heap.ST.read",
-      1,
+      2,
       2,
       1,
       [
@@ -82,20 +82,20 @@
         "refinement_interpretation_FStar.DM4F.Heap_Tm_refine_33c56d04cd2b4870da0423961c379a8a"
       ],
       0,
-      "824bbc82e7873f13e556d72e2745c14e"
+      "f3920e4ca41d667ef263c56aa9fa7b17"
     ],
     [
       "FStar.DM4F.Heap.ST.read_weak",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "492a8f81a0f8b27b2a18e16f27f104ec"
+      "b81c6d3885176346ff3c202b1432075c"
     ],
     [
       "FStar.DM4F.Heap.ST.write",
-      1,
+      2,
       2,
       1,
       [
@@ -106,11 +106,11 @@
         "unit_typing"
       ],
       0,
-      "f41795cff7198b1003d09f6a0acab30d"
+      "c47f48e4d007c2953b95c9550ab233d0"
     ],
     [
       "FStar.DM4F.Heap.ST.write_weak",
-      1,
+      2,
       2,
       1,
       [
@@ -121,11 +121,11 @@
         "unit_typing"
       ],
       0,
-      "17919c6d7330c9fa0d3188c5089481b2"
+      "fb5dbee908881029f1865cd7dfcff0bf"
     ],
     [
       "FStar.DM4F.Heap.ST.incr",
-      1,
+      4,
       2,
       1,
       [
@@ -144,20 +144,20 @@
         "typing_FStar.DM4F.Heap.addr_of"
       ],
       0,
-      "f1f11819d949557a47255725b26ea82d"
+      "67c23333a6745fe8e6bde2693faaaeea"
     ],
     [
       "FStar.DM4F.Heap.ST.incr'",
-      1,
+      2,
       2,
       1,
       [ "@query", "function_token_typing_Prims.int" ],
       0,
-      "40f8bdbe514643e566f3d740e13e4c1d"
+      "cfc84e5397445163cf0e8cfd1f6addd2"
     ],
     [
       "FStar.DM4F.Heap.ST.incr_increases",
-      1,
+      3,
       2,
       1,
       [
@@ -185,11 +185,11 @@
         "unit_typing"
       ],
       0,
-      "c5bc8a4ef081abffaf209fddebbfdb82"
+      "6bfb1a65a3f8b38e8999798c7b56d125"
     ],
     [
       "FStar.DM4F.Heap.ST.copy_and_incr",
-      1,
+      5,
       2,
       1,
       [
@@ -209,11 +209,11 @@
         "typing_FStar.Set.mem"
       ],
       0,
-      "51214ff4cea1da0e714ed4cca3c4c8c9"
+      "c36f0f339700df8e5c6b19fff4a4764f"
     ],
     [
       "FStar.DM4F.Heap.ST.alloc_addition_and_incr",
-      1,
+      4,
       2,
       1,
       [
@@ -230,7 +230,7 @@
         "typing_FStar.DM4F.Heap.addr_of"
       ],
       0,
-      "056aeb640d83425559671d1344d2a59a"
+      "14cb148f28afa9a6319a3b1a040b1132"
     ],
     [
       "FStar.DM4F.Heap.ST.zero",
@@ -242,11 +242,11 @@
         "haseqPrims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "f1e0ccae0bcc2476647c5f85b5141cc5"
+      "17229c386a5ede6f4cfdee77668cbee4"
     ],
     [
       "FStar.DM4F.Heap.ST.zero",
-      2,
+      4,
       2,
       1,
       [
@@ -272,11 +272,11 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "ef923eefc7fc7dbf2f001aafefe73547"
+      "0a31b9e215ac781495746b02b69fba1e"
     ],
     [
       "FStar.DM4F.Heap.ST.refine_st",
-      1,
+      2,
       2,
       1,
       [
@@ -287,11 +287,11 @@
         "projection_inverse_FStar.Pervasives.Native.Mktuple2__2"
       ],
       0,
-      "19a7e6ddde2592c4a2c5f512c7d216e1"
+      "373846519755b21d0b082fd42de4d383"
     ],
     [
       "FStar.DM4F.Heap.ST.runST",
-      1,
+      2,
       2,
       1,
       [
@@ -301,47 +301,47 @@
         "projection_inverse_FStar.Pervasives.Native.Mktuple2__1"
       ],
       0,
-      "3c3b4801b059c77dbf3faf5c874a128d"
+      "e8fc5be8b14d999831592ce38b9b5ec2"
     ],
     [
       "FStar.DM4F.Heap.ST._dm4f_STATE___proj__STATE__item__get_elab",
-      2,
-      2,
-      1,
-      [ "@query" ],
-      0,
-      "0dd37ab3053b0f8de78b7b0776bd8187"
-    ],
-    [
-      "FStar.DM4F.Heap.ST._dm4f_STATE___proj__STATE__item__put_elab",
-      2,
-      2,
-      1,
-      [ "@query" ],
-      0,
-      "91e315890b52bb3b1868e8108b07106d"
-    ],
-    [
-      "FStar.DM4F.Heap.ST.STATE",
-      3,
-      2,
-      1,
-      [ "@query" ],
-      0,
-      "1dca261a1191f51b68da9361ca7b0485"
-    ],
-    [
-      "FStar.DM4F.Heap.ST.STATE",
       4,
       2,
       1,
       [ "@query" ],
       0,
-      "c5fa1264f8e12bc42f8592615ac45edf"
+      "d6dfe7ce46dde7d1d1339738b673324b"
+    ],
+    [
+      "FStar.DM4F.Heap.ST._dm4f_STATE___proj__STATE__item__put_elab",
+      4,
+      2,
+      1,
+      [ "@query" ],
+      0,
+      "f848af1abc7de2f41274b0c0cbd82176"
+    ],
+    [
+      "FStar.DM4F.Heap.ST.STATE",
+      5,
+      2,
+      1,
+      [ "@query" ],
+      0,
+      "7ed6a251da81ab9a230765da2bc933bc"
+    ],
+    [
+      "FStar.DM4F.Heap.ST.STATE",
+      6,
+      2,
+      1,
+      [ "@query" ],
+      0,
+      "83dca1cde9c7f54500b326ef7074cbbc"
     ],
     [
       "FStar.DM4F.Heap.ST.alloc",
-      2,
+      6,
       2,
       1,
       [
@@ -357,11 +357,11 @@
         "projection_inverse_FStar.Pervasives.Native.Mktuple2__2"
       ],
       0,
-      "323fde344239e59215ac93f9e6f62cfd"
+      "eead2b9c32bfa144d9cae931efacf6ed"
     ],
     [
       "FStar.DM4F.Heap.ST.alloc",
-      3,
+      7,
       2,
       1,
       [
@@ -369,11 +369,11 @@
         "haseqPrims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "6e1945e90757f71f7af0118b7dcb88b1"
+      "67a27cc8bafd60771b6864916202edf9"
     ],
     [
       "FStar.DM4F.Heap.ST.alloc_weak",
-      2,
+      4,
       2,
       1,
       [
@@ -383,11 +383,11 @@
         "projection_inverse_FStar.Pervasives.Native.Mktuple2__2"
       ],
       0,
-      "70eb7781a594faff3f4f8801d30e476c"
+      "27028dbc9d37c627d247b209aae94140"
     ],
     [
       "FStar.DM4F.Heap.ST.read",
-      2,
+      4,
       2,
       1,
       [
@@ -396,20 +396,20 @@
         "refinement_interpretation_FStar.DM4F.Heap_Tm_refine_33c56d04cd2b4870da0423961c379a8a"
       ],
       0,
-      "e3ecba41744865930f51e0a60a32ebba"
+      "cb1a2f222934141d699b1d10acaba010"
     ],
     [
       "FStar.DM4F.Heap.ST.read_weak",
-      2,
+      4,
       2,
       1,
       [ "@query" ],
       0,
-      "d3509dcfcc59a2f0cfff05fba0fa50c3"
+      "70353d3f21e91614bdb04805113be05d"
     ],
     [
       "FStar.DM4F.Heap.ST.write",
-      2,
+      4,
       2,
       1,
       [
@@ -420,11 +420,11 @@
         "unit_typing"
       ],
       0,
-      "c01730030f22b90c472f92c489c75eba"
+      "a48aa890f05348081ac1e72a8368716b"
     ],
     [
       "FStar.DM4F.Heap.ST.write_weak",
-      2,
+      4,
       2,
       1,
       [
@@ -435,11 +435,11 @@
         "unit_typing"
       ],
       0,
-      "8134f9956f2ad403e579c07b506a7c52"
+      "4b494c09d920b0564edaae4f723421a3"
     ],
     [
       "FStar.DM4F.Heap.ST.incr",
-      2,
+      7,
       2,
       1,
       [
@@ -458,11 +458,11 @@
         "typing_FStar.DM4F.Heap.addr_of"
       ],
       0,
-      "2011563938213169367801157a6de036"
+      "21b0b86bbd8c2967e39573ea9e1bbe25"
     ],
     [
       "FStar.DM4F.Heap.ST.incr",
-      3,
+      8,
       2,
       1,
       [
@@ -470,20 +470,20 @@
         "haseqPrims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "d1125d3cfae09bdee65becc5e02857d9"
+      "57efd037489470afc3fb1d7beabe091e"
     ],
     [
       "FStar.DM4F.Heap.ST.incr'",
-      2,
+      4,
       2,
       1,
       [ "@query", "function_token_typing_Prims.int" ],
       0,
-      "d23b729294e7c4f83c2e9ebedb823e20"
+      "73a64db403cacb9d047e67e163fcf236"
     ],
     [
       "FStar.DM4F.Heap.ST.copy_and_incr",
-      2,
+      8,
       2,
       1,
       [
@@ -503,11 +503,11 @@
         "typing_FStar.Set.mem"
       ],
       0,
-      "195a8d269789138701abcd6e4211fa40"
+      "bd44b928a804a4f35faa0e03a0525e47"
     ],
     [
       "FStar.DM4F.Heap.ST.copy_and_incr",
-      3,
+      9,
       2,
       1,
       [
@@ -515,11 +515,11 @@
         "haseqPrims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "b964568b955b49100af62081abda81e6"
+      "7c885d99b767a759068df0be51ebb214"
     ],
     [
       "FStar.DM4F.Heap.ST.alloc_addition_and_incr",
-      2,
+      7,
       2,
       1,
       [
@@ -536,11 +536,11 @@
         "typing_FStar.DM4F.Heap.addr_of"
       ],
       0,
-      "7cf576cb391b337c1e6b5397fc91e5f8"
+      "a04f954af21c985c402a30770b927722"
     ],
     [
       "FStar.DM4F.Heap.ST.alloc_addition_and_incr",
-      3,
+      8,
       2,
       1,
       [
@@ -548,11 +548,11 @@
         "haseqPrims_Tm_refine_ba523126f67e00e7cd55f0b92f16681d"
       ],
       0,
-      "a573ac004f217efc6bd1238b9e047ea2"
+      "2951a66202290278e8a383e770b61d04"
     ],
     [
       "FStar.DM4F.Heap.ST.zero",
-      3,
+      6,
       2,
       1,
       [
@@ -578,11 +578,11 @@
         "well-founded-ordering-on-nat"
       ],
       0,
-      "b5a1f1d45bf9be0fe299359dce609a09"
+      "73bd25309faa6d63c89430464e2b5ac7"
     ],
     [
       "FStar.DM4F.Heap.ST.refine_st",
-      2,
+      4,
       2,
       1,
       [
@@ -593,7 +593,7 @@
         "projection_inverse_FStar.Pervasives.Native.Mktuple2__2"
       ],
       0,
-      "37474bba4695c362241fceb83e7780d3"
+      "570f39cabcbdf8e7780896faddc82d80"
     ]
   ]
 ]

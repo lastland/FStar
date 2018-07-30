@@ -15,11 +15,11 @@
         "haseqPlatform.Bytes_Tm_refine_3458b9f6f40fe62446cdc2c6d3755a94"
       ],
       0,
-      "f741fec5d66bf95b6b1a116130568233"
+      "744c1279736f242d6e6dd07433cda8d0"
     ],
     [
       "MAC.__proj__Entry__item__t",
-      1,
+      2,
       2,
       1,
       [
@@ -27,7 +27,7 @@
         "projection_inverse_MAC.Entry_k"
       ],
       0,
-      "e5b7c44638bc019d4b8677ae2a257bcc"
+      "b209a5a56e535972b1e25c823ad2ab8a"
     ],
     [
       "MAC.verify",
@@ -53,22 +53,22 @@
         "typing_Platform.Bytes.equalBytes"
       ],
       0,
-      "1be7704d634dd5ddf711692ea41dce40"
+      "7a06ba7ac53245dbd92cebb3e17f1524"
     ],
     [
       "MAC.keygen",
-      1,
+      2,
       2,
       1,
       [
         "@query", "equation_SHA1.keysize", "projection_inverse_BoxInt_proj_0"
       ],
       0,
-      "877952318f900009a9fe3e5edaf47d7b"
+      "d70ded151eff4582d2f0782729b58ef8"
     ],
     [
       "MAC.mac",
-      1,
+      2,
       2,
       1,
       [
@@ -85,6 +85,7 @@
         "equation_Prims.l_True", "equation_SHA1.hmac_sha1",
         "equation_SHA1.key", "equation_SHA1.keysize", "equation_SHA1.text",
         "equation_with_fuel_FStar.List.Tot.Base.find.fuel_instrumented",
+        "function_token_typing_FStar.Heap.trivial_preorder",
         "interpretation_FStar.Heap_Tm_abs_a0a13c11aa3964346153dd55506fa009",
         "interpretation_MAC_Tm_abs_e8ac7b1f62ef68ccc36f2ed3e7f4c9d2",
         "primitive_Prims.op_AmpAmp", "primitive_Prims.op_Equality",
@@ -99,15 +100,15 @@
         "refinement_interpretation_MAC_Tm_refine_557169cc4eb3b2882384851770e3a3b4",
         "refinement_interpretation_Platform.Bytes_Tm_refine_3458b9f6f40fe62446cdc2c6d3755a94",
         "refinement_interpretation_Platform.Bytes_Tm_refine_ad9cde64c932cdae765806f65e24e93b",
-        "token_correspondence_FStar.Heap.trivial_preorder", "true_interp",
-        "typing_Platform.Bytes.equalBytes", "typing_SHA1.hmac_sha1"
+        "true_interp", "typing_Platform.Bytes.equalBytes",
+        "typing_SHA1.hmac_sha1"
       ],
       0,
-      "1c2653a1792b7447e307d722229df00d"
+      "9e420e5da1b535012e5dec3c4f8dd32b"
     ],
     [
       "MAC.verify",
-      2,
+      3,
       2,
       2,
       [
@@ -129,7 +130,7 @@
         "typing_Platform.Bytes.equalBytes"
       ],
       0,
-      "551ff0d25cb567e159dba7c70b91286f"
+      "32bd20cb2bc323f9120a23256876ed4f"
     ]
   ]
 ]

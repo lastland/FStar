@@ -3,39 +3,39 @@
   [
     [
       "Bug155.test1",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "f922e19a18609ad1af3f03ab06aa4eec"
+      "af711ac07f5b060388949d4be8e4a0d0"
     ],
     [
       "Bug155.test2'",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "70278371e90f51af052b978d00165533"
+      "ae8225e9bcc37852918ba4bc016d72e0"
     ],
     [
       "Bug155.test2",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "a275d66c13658dbe7a7e0cb55a4fe677"
+      "a870b6ed9c7b6b464e24267dd38be507"
     ],
     [
       "Bug155.test3",
-      1,
+      2,
       2,
       1,
       [ "@query" ],
       0,
-      "99b7669694b364bb28e369e0bb956f1c"
+      "db1df915ddbea2721d556b8afeea1d73"
     ]
   ]
 ]
