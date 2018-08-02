@@ -1299,6 +1299,8 @@ let (encode_free_var :
                                        (uu___372_4712.FStar_TypeChecker_Env.nosynth);
                                      FStar_TypeChecker_Env.uvar_subtyping =
                                        (uu___372_4712.FStar_TypeChecker_Env.uvar_subtyping);
+                                     FStar_TypeChecker_Env.weaken_comp_tys =
+                                       (uu___372_4712.FStar_TypeChecker_Env.weaken_comp_tys);
                                      FStar_TypeChecker_Env.tc_term =
                                        (uu___372_4712.FStar_TypeChecker_Env.tc_term);
                                      FStar_TypeChecker_Env.type_of =
@@ -2124,6 +2126,8 @@ let (encode_top_level_let :
                          (uu___375_6368.FStar_TypeChecker_Env.nosynth);
                        FStar_TypeChecker_Env.uvar_subtyping =
                          (uu___375_6368.FStar_TypeChecker_Env.uvar_subtyping);
+                       FStar_TypeChecker_Env.weaken_comp_tys =
+                         (uu___375_6368.FStar_TypeChecker_Env.weaken_comp_tys);
                        FStar_TypeChecker_Env.tc_term =
                          (uu___375_6368.FStar_TypeChecker_Env.tc_term);
                        FStar_TypeChecker_Env.type_of =
