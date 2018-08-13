@@ -26,6 +26,7 @@ lowparse \
 low-mitls-experiments \
 vale \
 seplogic \
+csl \
 hello \
 native_tactics \
 extraction \

@@ -66,6 +66,11 @@ let implies_intros () : Tac binders = repeat1 implies_intro
 let l_intro () = forall_intro `or_else` implies_intro
 let l_intros () = repeat l_intro
 
+let explode () : Tac unit =
+    ignore (
+    repeat (fun () -> first [(fun () -> ignore (l_intro ()));
+                             (fun () -> ignore (split ()))]))
+
 let rec visit (callback:unit -> Tac unit) : Tac unit =
     focus (fun () ->
             or_else callback
