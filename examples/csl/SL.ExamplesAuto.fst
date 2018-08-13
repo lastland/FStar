@@ -3,8 +3,6 @@ module SL.ExamplesAuto
 open SL.Base
 open SL.AutoTactic
 
-effect ST (a:Type) (wp:st_wp a) (fp:refs) = STATE a (fun post m -> frame_wp (with_fp fp wp) (frame_post post) m)
-
 let swap_wp (r1 r2:ref int) = fun p m -> exists x y. m == (r1 |> x <*> r2 |> y) /\ p () (r1 |> y <*> r2 |> x)
 
 let swap (r1 r2:ref int) : ST unit (swap_wp r1 r2) [tosref r1; tosref r2] by (sl_auto ())

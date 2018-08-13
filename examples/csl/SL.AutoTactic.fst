@@ -58,10 +58,13 @@ let footprint_of (t:term) : Tac (list term) =
   //   if fv_is fv (`%read_wp) then [tr]
   //   else fail "not a read_wp"
   // -- generalizing the above to arbitrary "footprint expressions"
-  | Tv_FVar fv, (_t, Q_Implicit)::(fp, Q_Explicit)::_ ->
+  | Tv_FVar fv, args ->
       if fv_is fv (`%with_fp)
-      then let fp = explode_list fp in
-           Tactics.Util.map from_sref fp
+      then match args with
+           | (_t, Q_Implicit)::(fp, Q_Explicit)::_ ->
+               let fp = explode_list fp in
+               Tactics.Util.map from_sref fp
+           | _ -> fail ("unexpected arity for with_fp: " ^ term_to_string t)
       else fail ("not a with_fp: " ^ term_to_string t)
   | _ -> fail ("not an applied free variable: " ^ term_to_string t)
 
@@ -132,6 +135,8 @@ type cmd =
   | Close     : cmd
   | WithFP    : cmd
   | Assume    : cmd
+  | Implies   : cmd
+  | Forall    : cmd
   | FramePost : cmd
   | Unknown   : option fv ->cmd
 
@@ -146,28 +151,19 @@ let peek_in (t:term) : Tac cmd =
              (tpost, Q_Explicit);
              (tm, Q_Explicit)] -> Frame ta twp tpost tm
           | _ -> fail "Unexpected arity of frame"
-     else if fv_is fv (`%read_wp)
-     then Read
-     else if fv_is fv (`%write_wp)
-     then Write
-     else if fv_is fv (`%with_fp)
-     then WithFP
-     else if fv_is fv (`%bind_wp)
-     then Bind
-     else if fv_is fv (`%st_ite_wp)
-     then Ite
-     else if fv_is fv (`%st_if_then_else)
-     then IfThenElse
-     else if fv_is fv (`%st_close_wp)
-     then Close
-     else if fv_is fv (`%st_assume_p)
-     then Assume
-     else if fv_is fv (`%frame_post)
-     then FramePost
-     else if fv_is fv (`%l_Exists)  //if it is exists x. then we can't unfold, so return None
-     then Unknown None
-     else if fv_is fv (`%l_False)  //AR: TODO: this is quite hacky, we need a better way
-     then Unknown None
+     else if fv_is fv (`%read_wp)               then Read
+     else if fv_is fv (`%write_wp)              then Write
+     else if fv_is fv (`%with_fp)               then WithFP
+     else if fv_is fv (`%bind_wp)               then Bind
+     else if fv_is fv (`%st_ite_wp)             then Ite
+     else if fv_is fv (`%st_if_then_else)       then IfThenElse
+     else if fv_is fv (`%st_close_wp)           then Close
+     else if fv_is fv (`%st_assume_p)           then Assume
+     else if fv_is fv (`%l_imp)                 then Implies
+     else if fv_is fv (`%l_Forall)              then Forall
+     else if fv_is fv (`%frame_post)            then FramePost
+     else if fv_is fv (`%l_Exists)              then Unknown None //if it is exists x. then we can't unfold, so return None then Unknown None
+     else if fv_is fv (`%l_False)               then Unknown None //AR: TODO: this is quite hacky, we need a better way then Unknown None
      else Unknown (Some fv)
     | _ -> Unknown None
  
@@ -283,6 +279,14 @@ let rec sl (i:int) : Tac unit =
     unfold_first_occurrence (`%write_wp);
     norm[];
     eexists unit (fun () -> FStar.Tactics.split(); trefl());
+    sl (i + 1)
+
+  | Forall ->
+    ignore (forall_intros ());
+    sl (i + 1)
+
+  | Implies ->
+    ignore (implies_intros ());
     sl (i + 1)
 
   | WithFP ->

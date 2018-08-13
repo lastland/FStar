@@ -60,3 +60,16 @@ new_effect {
      ; null_wp      = st_null_wp
      ; trivial      = st_trivial
 }
+
+let (<|) f x = f x
+
+type sref = (a:Type & ref a)
+let refs = list sref
+
+let tosref #a (r : ref a) : sref = Mkdtuple2 a r
+
+let with_fp (fp : refs) (x:'a) : 'a = x
+
+let with_fp_lemma fp x : Lemma (with_fp fp x == x) [SMTPat (with_fp fp x)] = ()
+
+effect ST (a:Type) (wp:st_wp a) (fp:refs) = STATE a (fun post m -> frame_wp (with_fp fp wp) (frame_post post) m)

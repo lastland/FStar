@@ -3,17 +3,6 @@ module SL.Actions
 open SL.Heap
 open SL.Effect
 
-let (<|) f x = f x
-
-type sref = (a:Type & ref a)
-let refs = list sref
-
-let tosref #a (r : ref a) : sref = Mkdtuple2 a r
-
-let with_fp (fp : refs) (x:'a) : 'a = x
-
-let with_fp_lemma fp x : Lemma (with_fp fp x == x) [SMTPat (with_fp fp x)] = ()
-
 let lift_div_st (a:Type) (wp:pure_wp a) (p:post a) (m:memory) = wp (fun a -> p a m)
 sub_effect DIV ~> STATE = lift_div_st
 
