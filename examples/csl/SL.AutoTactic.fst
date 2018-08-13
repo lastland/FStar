@@ -28,6 +28,26 @@ let solve_frame_wp_fails (_:unit) : Tac unit =
 
 let fv_is (fv:fv) (name:string) = implode_qn (inspect_fv fv) = name
 
+let rec explode_list (t:term) : Tac (list term) =
+    let hd, args = collect_app t in
+    match inspect hd with
+    | Tv_FVar fv ->
+        if fv_is fv (`%Cons)
+        then match args with
+             | [(_t, Q_Implicit); (hd, Q_Explicit); (tl, Q_Explicit)] -> hd :: explode_list tl
+             | _ -> fail "bad Cons"
+        else if fv_is fv (`%Nil)
+        then []
+        else fail "not a list"
+    | _ ->
+        fail "not a list (not an fv)"
+
+let from_sref (t:term) : Tac term =
+    let hd, args = collect_app t in
+    match inspect hd, args with
+    | Tv_FVar _, [(_t, Q_Implicit); (r, Q_Explicit)] -> r
+    | _ -> fail ("from_sref: " ^ term_to_string t)
+
 let footprint_of (t:term) : Tac (list term) =
   let hd, tl = collect_app t in
   match inspect hd, tl with
@@ -38,13 +58,12 @@ let footprint_of (t:term) : Tac (list term) =
   //   if fv_is fv (`%read_wp) then [tr]
   //   else fail "not a read_wp"
   // -- generalizing the above to arbitrary "footprint expressions"
-  | Tv_FVar fv, xs ->
-      let footprint_aux (a : argv) : Tac (option term) =
-      match inspect (fst (collect_app (tc (fst a)))) with
-      | Tv_FVar fv -> if fv_is fv (`%ref) then Some (fst a) else None
-      | _ -> None
-      in FStar.Tactics.Util.filter_map footprint_aux xs
-  | _ -> fail "not an applied free variable"
+  | Tv_FVar fv, (_t, Q_Implicit)::(fp, Q_Explicit)::_ ->
+      if fv_is fv (`%with_fp)
+      then let fp = explode_list fp in
+           Tactics.Util.map from_sref fp
+      else fail ("not a with_fp: " ^ term_to_string t)
+  | _ -> fail ("not an applied free variable: " ^ term_to_string t)
 
 let pack_fv' (n:name) : Tac term = pack (Tv_FVar (pack_fv n))
 let eexists (a:Type) (t:unit -> Tac a) : Tac a =
@@ -199,6 +218,8 @@ let rec solve_procedure_ref_value_existentials (use_trefl:bool) :Tac bool =
 
 let rec sl (i:int) : Tac unit =
   ddump ("SL :" ^ string_of_int i);
+
+  unfold_def (`(<|));
 
   //post procedure call, we sometimes have a m == m kind of expression in the wp
   //this will solve it in the tactic itself rather than farming it out to smt
@@ -374,6 +395,8 @@ let prelude' () : Tac unit =
   let h = implies_intro () in and_elim (binder_to_term h); clear h;
   let h = implies_intro() in and_elim (binder_to_term h); clear h;
 
+  unfold_first_occurrence (`%with_fp);
+  
   //defined m0 * m1
   ignore (implies_intro ());
 
@@ -388,7 +411,7 @@ let prelude' () : Tac unit =
                            __elim_exists h;
 			   ignore (forall_intro ())));
   ddump "After elim ref values";
-
+  
   //now we are at the small footprint style wp
   //we should full norm it, so that we can get our hands on the m0 == ..., i.e. the footprint of the command
   let user_annot = implies_intro() in
