@@ -259,16 +259,16 @@ let find_frame (refs : list term) (small : term) (big : term) : Tac (term * bind
     let eq = `((`#small <*> `#frame) == `#big) in
 
     //cut
-    dump "GG 0";
+    ddump "GG 0";
     apply_lemma (mk_e_app (`__tcut) [eq]);
-    dump "GG 1 with new goal:";
+    ddump "GG 1 with new goal:";
 
     //flip so that the current goal is the equality of memory expressions
     flip ();
     
-    dump ("before canon_monoid");
+    ddump ("before canon_monoid");
     canon_monoid_sl refs;
-    dump ("after canon_monoid");
+    ddump ("after canon_monoid");
     begin match trytac trefl with
     | Some _ -> ()
     | None ->
@@ -280,7 +280,7 @@ let find_frame (refs : list term) (small : term) (big : term) : Tac (term * bind
         then (apply_lemma (`__unif_helper); trefl ())
         else fail "trefl failed and unifying to `emp` too"
     end;
-    dump ("after trefl");
+    ddump ("after trefl");
 
     //this is the a ==> b thing when we did cut above
     let heap_eq = implies_intro () in
@@ -379,11 +379,11 @@ let rec sl (i:int) : Tac unit =
 
     //compute the footprint from the arg (e.g. read_wp r1, swap_wp r1 r2, etc.)
     let fp_refs = footprint_of twp in
-    dump ("fp_refs="^ FStar.String.concat "," (List.Tot.map term_to_string fp_refs));
+    ddump ("fp_refs="^ FStar.String.concat "," (List.Tot.map term_to_string fp_refs));
 
     //build the footprint memory expression, uvars for ref values, and join then
     let fp = ref_terms_to_heap_term fp_refs in
-    dump ("m0=" ^ term_to_string fp);
+    ddump ("m0=" ^ term_to_string fp);
 
     let (frame, heap_eq) = find_frame fp_refs fp tm in
 
@@ -391,13 +391,13 @@ let rec sl (i:int) : Tac unit =
     let fp = norm_term [] fp in  //if we don't do these norms, fast implicits don't kick in because of lambdas
     let frame = norm_term [] frame in
     apply_lemma (mk_e_app (`frame_wp_lemma) [tm; fp; frame]);
-    dump ("after frame lemma - 1");
+    ddump ("after frame lemma - 1");
 
     //equality goal from frame_wp_lemma
     mapply (binder_to_term heap_eq);
 
     //T.split(); smt(); //definedness
-    dump ("after frame lemma - 2");
+    ddump ("after frame lemma - 2");
     sl(i + 1)
 
   | ParWP wpa wpb th0 ->
@@ -414,21 +414,21 @@ let rec sl (i:int) : Tac unit =
 
     let (frame, eq_hyp) = find_frame fp h th0 in
 
-    dump "GG 0";
+    ddump "GG 0";
 
     witness (`(`#h_a <*> `#frame));
-    dump "GG 0.1";
+    ddump "GG 0.1";
     witness h_b;
-    dump "GG 0.2";
+    ddump "GG 0.2";
 
     apply_lemma (`(par_wp'_lemma));
-    dump "GG 1";
+    ddump "GG 1";
 
     canon_monoid_sl fp;
-    dump "GG 3";
+    ddump "GG 3";
     trefl ();
 
-    dump "GG 4";
+    ddump "GG 4";
     sl (i + 1)
 
 let __elim_exists_as_forall

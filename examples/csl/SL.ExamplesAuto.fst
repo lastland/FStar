@@ -5,7 +5,7 @@ open SL.AutoTactic
 
 let swap_wp (r1 r2:ref int) = fun p m -> exists x y. m == (r1 |> x <*> r2 |> y) /\ p () (r1 |> y <*> r2 |> x)
 
-#set-options "--tactic_trace_d 2 --debug SL.ExamplesAuto"
+(* #set-options "--tactic_trace_d 2 --debug SL.ExamplesAuto" *)
 
 let swap (r1 r2:ref int) : ST unit (swap_wp r1 r2) [tosref r1; tosref r2] by (sl_auto ())
   = let x = !r1 in

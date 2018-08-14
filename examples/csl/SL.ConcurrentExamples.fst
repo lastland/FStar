@@ -103,7 +103,7 @@ let test04 (r:ref int) (s:ref int) : ST int (fun p m -> exists v w. m == (r |> v
 (* This is explicit about the frames of the parallel composition, but still requires
 //#set-options "--debug SL.ConcurrentExamples"
  * non-trivial frame reasoning *)
-let test03' (r:ref int) : ST int (fun p m -> exists v. m == r |> v /\ p 3 (r |> v)) [] by (sl_auto ())
-=
-  let (x, y) = par_exp emp emp (fun () -> l 1) (fun () -> l 2) in
-  x + y
+//let test03' (r:ref int) : ST int (fun p m -> exists v. m == r |> v /\ p 3 (r |> v)) [] by (sl_auto ())
+//=
+//  let (x, y) = par_exp emp emp (fun () -> l 1) (fun () -> l 2) in
+//  x + y
