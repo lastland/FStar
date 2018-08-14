@@ -4,13 +4,11 @@ open SL.Heap
 open SL.Effect
 
 let par_comp #a #b (wpa : st_wp a) (wpb : st_wp b) post m1 m2 =
-   defined (m1 <*> m2) ==> 
-   wpa (fun a m1' -> wpb (fun b m2' -> defined (m1' <*> m2') /\ post (a, b) (m1' <*> m2')) m2) m1
+   wpa (fun a m1' -> wpb (fun b m2' -> post (a, b) (m1' <*> m2')) m2) m1
         
 let par_wp' #a #b (wpa : st_wp a) (wpb : st_wp b) post m =
     exists m1 m2.
-           defined (m1 <*> m2)
-        /\ m == (m1 <*> m2)
+           m == (m1 <*> m2)
         /\ par_comp wpa wpb post m1 m2
 
 (* Silly lemma, but allows to handle goals properly *)
@@ -20,20 +18,12 @@ let par_wp'_lemma
   (#wpb : st_wp b)
   (m m1 m2 : memory)
   (post : post (a * b))
-  (_ : squash (defined (m1 <*> m2)))
   (_ : squash (m == (m1 <*> m2)))
   (_ : squash (par_comp wpa wpb post m1 m2))
   //(_ : squash (wpa (fun a m1' -> forall b. post (a, b) m1') m1))
   //(_ : squash (wpb (fun b m2' -> forall a. post (a, b) m2') m2))
-     : Lemma (defined (m1 <*> m2)
-               /\ m == (m1 <*> m2)
+     : Lemma (m == (m1 <*> m2)
                /\ (par_comp wpa wpb post m1 m2)) = ()
-
-let frame_wp_lemma (#a:Type) (#wp:st_wp a) (#f_post:memory -> post a) (m m0 m1:memory)
-    (_ : squash ((m0 <*> m1) == m))
-    (_ : squash (defined m))
-    (_ : squash (wp (f_post m1) m0)) :
-         (squash (frame_wp wp f_post m)) = ()
 
 let par_wp #a #b (wpa : st_wp a) (wpb : st_wp b) : st_wp (a * b) =
   fun post m0 -> frame_wp (par_wp' wpa wpb) (frame_post post) m0
@@ -42,7 +32,7 @@ assume val par : (#a:Type) -> (#b:Type) ->
                  (#wpa : st_wp a) ->  (#wpb : st_wp b) ->
                  ($f : (unit -> STATE a wpa)) ->
                  ($g : (unit -> STATE b wpb)) ->
-                 STATE (a * b) (par_wp wpa wpb)
+                 STATE (a * b) (par_wp' wpa wpb)
 
 
 
@@ -86,8 +76,7 @@ assume val release : #a:Type -> (#r: ref a) -> (l : lock r) ->
 (* A version with explicit heaps *)
 unfold let par_wp'_exp #a #b (wpa : st_wp a) (wpb : st_wp b) (m1 m2 : memory)
                        (post : post (a * b)) (m : memory) : Type0 =
-         defined (m1 <*> m2)
-        /\ m == (m1 <*> m2)
+           m == (m1 <*> m2)
         /\ wpa (fun a m1' -> wpb (fun b m2' -> post (a, b) (m1' <*> m2')) m2) m1
 
 let par_wp_exp #a #b (wpa : st_wp a) (wpb : st_wp b) (m1 m2 : memory) : st_wp (a * b) =

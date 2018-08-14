@@ -22,11 +22,10 @@ let l (x:'a) : STATE 'a (fun p m -> m == emp /\ p x m) = x
 //                 (fun () -> r := 2; 1) (fun () -> l 2) in
 //  x + y
 
-let noaddrs = Set.empty #nat
+//let noaddrs = Set.empty #nat
 
   //#set-options "--print_full_names"
 
-#set-options "--debug SL.ConcurrentExamples"
 
 
 // let addrs_emp (m m':memory) : Lemma (requires (defined m /\ addrs_in m == Set.empty))
@@ -51,41 +50,60 @@ let test05 (r:ref int) (l:lock r) : ST unit (fun p m -> m == emp /\ p () emp) []
 
 
 
-let test06 (r:ref int) : ST int (fun p m -> exists v. m == r |> v /\ p 3 (r |> v)) by (sl_auto ()) =
-  let l = mklock (fun p -> True) in
-  let _ = par (fun () -> acquire l; release l; 1) (fun () -> acquire l; release l; 2) in
-  3
-
-unfold let return_wp (a:Type) (x:a) :st_wp a = 
-  fun post m0 -> m0 == emp /\ post x m0
-
-open FStar.Tactics
-
-// `compute` is needed for these two, but they work without the tactic since they are
-// explicit about their heaps already. We also use STATE instead of the framed ST.
-let test01 () : STATE int (fun p m -> forall r. m == emp /\ p r m) by (compute ())
-=
-  let (x, y) = par_exp' emp emp (fun () -> l 1) (fun () -> l 2) in
-  x + y
-
-let test02 () : STATE int (fun p m -> m == emp /\ p 3 m) by (compute ())
-=
-  let (x, y) = par_exp' emp emp (fun () -> l 1) (fun () -> l 2) in
-  x + y
+// let test06 (r:ref int) : ST int (fun p m -> exists v. m == r |> v /\ p 3 (r |> v)) [] by (sl_auto ()) =
+//   let l = mklock r in
+//   let _ = par (fun () -> acquire l; release l; 1) (fun () -> acquire l; release l; 2) in
+//   3
+// 
+// unfold let return_wp (a:Type) (x:a) :st_wp a = 
+//   fun post m0 -> m0 == emp /\ post x m0
+// 
+// open FStar.Tactics
+// 
+// // `compute` is needed for these two, but they work without the tactic since they are
+// // explicit about their heaps already. We also use STATE instead of the framed ST.
+// let test01 () : STATE int (fun p m -> forall r. m == emp /\ p r m) by (compute ())
+// =
+//   let (x, y) = par_exp' emp emp (fun () -> l 1) (fun () -> l 2) in
+//   x + y
+// 
+// let test02 () : STATE int (fun p m -> m == emp /\ p 3 m) by (compute ())
+// =
+//   let (x, y) = par_exp' emp emp (fun () -> l 1) (fun () -> l 2) in
+//   x + y
 
 (* Sanity check that other programs still work.. since we modified the tactic *)
-let swap_wp (r1 r2:ref int) = fun p m -> exists x y. m == (r1 |> x <*> r2 |> y) /\ p () (r1 |> y <*> r2 |> x)
-let swap (r1 r2:ref int) :ST unit (swap_wp r1 r2) by (sl_auto ())
-  = let x = !r1 in
-    let y = !r2 in
-    r1 := y;
-    r2 := x
+//let swap_wp (r1 r2:ref int) = fun p m -> exists x y. m == (r1 |> x <*> r2 |> y) /\ p () (r1 |> y <*> r2 |> x)
+//let swap (r1 r2:ref int) :ST unit (swap_wp r1 r2) by (sl_auto ())
+//  = let x = !r1 in
+//    let y = !r2 in
+//    r1 := y;
+//    r2 := x
 
-#set-options "--print_full_names --prn --print_implicits"
+//#set-options "--debug SL.ConcurrentExamples"
+//#set-options "--print_full_names --prn --print_implicits"
 
+let left  r () : ST int (fun p m -> exists v. m == r |> v /\ p 1 (r |> v)) [tosref r] by (sl_auto ()) = 1 
+let right r () : ST int (fun p m -> exists v. m == r |> v /\ p 2 (r |> v)) [tosref r] by (sl_auto ()) = 2
+
+let test03 (r:ref int) (s:ref int) : ST int (fun p m -> exists v w. m == (r |> v <*> s |> w) /\ p 3 (r |> v <*> s |> w)) [] by (sl_auto ())
+=
+  let (x, y) = par (left r) (right s) in
+  x + y
+  
+let test04 (r:ref int) (s:ref int) : ST int (fun p m -> exists v w. m == (r |> v <*> s |> w) /\ p 3 (r |> v <*> s |> w)) [] by (sl_auto ())
+=
+  let (x, y) = par (left s) (right r) in
+  x + y
+
+
+
+
+  
 (* This is explicit about the frames of the parallel composition, but still requires
+//#set-options "--debug SL.ConcurrentExamples"
  * non-trivial frame reasoning *)
-let test03' (r:ref int) : ST int (fun p m -> exists v. m == r |> v /\ p 3 (r |> v)) by (sl_auto ())
+let test03' (r:ref int) : ST int (fun p m -> exists v. m == r |> v /\ p 3 (r |> v)) [] by (sl_auto ())
 =
   let (x, y) = par_exp emp emp (fun () -> l 1) (fun () -> l 2) in
   x + y

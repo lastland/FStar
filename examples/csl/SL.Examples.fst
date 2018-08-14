@@ -14,10 +14,10 @@ unfold let return_wp (a:Type) (x:a) :st_wp a =
   fun post m0 -> m0 == emp /\ post x m0
 
 unfold let frame_wp (#a:Type) (wp:st_wp a) (post:memory -> post a) (m:memory) =
-  exists (m0 m1:memory). defined (m0 <*> m1) /\ m == (m0 <*> m1) /\ wp (post m1) m0
+  exists (m0 m1:memory). m == (m0 <*> m1) /\ wp (post m1) m0
 
 unfold let frame_post (#a:Type) (p:post a) (m0:memory) :post a =
-  fun x m1 -> defined (m1 <*> m0) /\ p x (m1 <*> m0)  //m1 is the frame
+  fun x m1 -> p x (m1 <*> m0)  //m1 is the frame
 
 unfold let bind_wp (r:range) (a:Type) (b:Type) (wp1:st_wp a) (wp2:a -> st_wp b)
   :st_wp b
@@ -93,72 +93,70 @@ open FStar.Tactics
  *)
 let lemma_singleton_heap_rw (#a:Type0) (phi:memory -> memory -> a -> Type0) (r:ref a) (x:a)
   :Lemma (requires (phi (r |> x) emp x))
-         (ensures  (exists (m0 m1:memory). defined (m0 <*> m1) /\
-	                              (r |> x) == (m0 <*> m1) /\ (exists x. m0 == (r |> x) /\ phi m0 m1 x)))
+         (ensures  (exists (m0 m1:memory). (r |> x) == (m0 <*> m1) /\ (exists x. m0 == (r |> x) /\ phi m0 m1 x)))
   = ()
 
 let lemma_rw (#a:Type0) (phi:memory -> memory -> a -> Type0) (r:ref a) (x:a) (m:memory)
-  :Lemma (requires (defined ((r |> x) <*> m) /\ phi (r |> x) m x))
-         (ensures  (exists (m0 m1:memory). defined (m0 <*> m1) /\
-	                              ((r |> x) <*> m) == (m0 <*> m1) /\ (exists x. m0 == (r |> x) /\ phi m0 m1 x)))
+  :Lemma (requires (phi (r |> x) m x))
+         (ensures  (exists (m0 m1:memory). ((r |> x) <*> m) == (m0 <*> m1) /\ (exists x. m0 == (r |> x) /\ phi m0 m1 x)))
   = ()
 
 let lemma_bind (phi:memory -> memory -> memory -> memory -> Type0) (m m':memory)
-  :Lemma (requires (exists m3 m4. defined (m3 <*> m4) /\ (m <*> m') == (m3 <*> m4) /\ phi (m <*> m') emp m3 m4))
-         (ensures  (exists (m0 m1:memory). defined (m0 <*> m1) /\ (m <*> m') == (m0 <*> m1) /\
-	                              (exists (m3 m4:memory). defined (m3 <*> m4) /\ m0 == (m3 <*> m4) /\ phi m0 m1 m3 m4)))
+  :Lemma (requires (exists m3 m4. (m <*> m') == (m3 <*> m4) /\ phi (m <*> m') emp m3 m4))
+         (ensures  (exists (m0 m1:memory). (m <*> m') == (m0 <*> m1) /\
+	                              (exists (m3 m4:memory). m0 == (m3 <*> m4) /\ phi m0 m1 m3 m4)))
   = ()
 
 let lemma_singleton_heap_procedure (#a:Type0) (phi:memory -> memory -> a -> Type0)
 		                   (r:ref a) (x:a)
   :Lemma (requires (phi (r |> x) emp x))
-         (ensures  (exists (m0 m1:memory). defined (m0 <*> m1) /\ (r |> x) == (m0 <*> m1) /\
+         (ensures  (exists (m0 m1:memory). (r |> x) == (m0 <*> m1) /\
 	                              (m0 == (r |> x) /\ phi m0 m1 x)))
   = ()
 
 let lemma_procedure (phi:memory -> memory -> memory -> memory -> Type0)
 		    (m m':memory)
-  :Lemma (requires (defined (m <*> m') /\ phi m m' m m'))
-         (ensures  (exists (m0 m1:memory). defined (m0 <*> m1) /\ (m <*> m') == (m0 <*> m1) /\
+  :Lemma (requires (phi m m' m m'))
+         (ensures  (exists (m0 m1:memory). (m <*> m') == (m0 <*> m1) /\
 	                              (m0 == m /\ phi m m' m0 m1)))
   = ()
 
 let lemma_pure_right (m m':memory) (phi:memory -> memory -> memory -> Type0)
-  :Lemma (requires (defined (m <*> m') /\ phi m m' (m <*> m')))
-         (ensures  (exists (m0 m1:memory). defined (m0 <*> m1) /\ (m <*> m') == (m0 <*> m1) /\ phi m m' m1))
+  :Lemma (requires (phi m m' (m <*> m')))
+         (ensures  (exists (m0 m1:memory). (m <*> m') == (m0 <*> m1) /\ phi m m' m1))
   = lemma_sep_comm (m <*> m') emp
 
 let lemma_rewrite_sep_comm (m1 m2:memory) (phi:memory -> memory -> memory -> memory -> Type0)
-  :Lemma (requires (exists (m3 m4:memory). defined (m3 <*> m4) /\ (m1 <*> m2) == (m3 <*> m4) /\ phi m1 m2 m3 m4))
-         (ensures  (exists (m3 m4:memory). defined (m3 <*> m4) /\ (m2 <*> m1) == (m3 <*> m4) /\ phi m1 m2 m3 m4))
+  :Lemma (requires (exists (m3 m4:memory). (m1 <*> m2) == (m3 <*> m4) /\ phi m1 m2 m3 m4))
+         (ensures  (exists (m3 m4:memory). (m2 <*> m1) == (m3 <*> m4) /\ phi m1 m2 m3 m4))
   = lemma_sep_comm m1 m2
 
 let lemma_rewrite_sep_assoc1 (m1 m2 m3:memory) (phi:memory -> memory -> memory -> memory -> memory -> Type0)
-  :Lemma (requires (exists (m4 m5:memory). defined (m4 <*> m5) /\ (m2 <*> (m1 <*> m3)) == (m4 <*> m5) /\
+  :Lemma (requires (exists (m4 m5:memory). (m2 <*> (m1 <*> m3)) == (m4 <*> m5) /\
 	                     phi m1 m2 m3 m4 m5))
-         (ensures  (exists (m4 m5:memory). defined (m4 <*> m5) /\ (m1 <*> (m2 <*> m3)) == (m4 <*> m5) /\
+         (ensures  (exists (m4 m5:memory). (m1 <*> (m2 <*> m3)) == (m4 <*> m5) /\
 	                     phi m1 m2 m3 m4 m5))
   = lemma_sep_comm m1 m2
 
 let lemma_rewrite_sep_assoc2 (m1 m2 m3:memory) (phi:memory -> memory -> memory -> memory -> memory -> Type0)
-  :Lemma (requires (exists (m4 m5:memory). defined (m4 <*> m5) /\ (m3 <*> (m1 <*> m2)) == (m4 <*> m5) /\
+  :Lemma (requires (exists (m4 m5:memory). (m3 <*> (m1 <*> m2)) == (m4 <*> m5) /\
 	                     phi m1 m2 m3 m4 m5))
-         (ensures  (exists (m4 m5:memory). defined (m4 <*> m5) /\ (m1 <*> (m2 <*> m3)) == (m4 <*> m5) /\
+         (ensures  (exists (m4 m5:memory). (m1 <*> (m2 <*> m3)) == (m4 <*> m5) /\
 	                     phi m1 m2 m3 m4 m5))
   = lemma_sep_comm m3 m1;
     lemma_sep_comm m3 m2
 
 let lemma_rewrite_sep_assoc3 (m1 m2 m3:memory) (phi:memory -> memory -> memory -> memory -> memory -> Type0)
-  :Lemma (requires (exists (m4 m5:memory). defined (m4 <*> m5) /\ ((m1 <*> m2) <*> m3) == (m4 <*> m5) /\
+  :Lemma (requires (exists (m4 m5:memory). ((m1 <*> m2) <*> m3) == (m4 <*> m5) /\
 	                     phi m1 m2 m3 m4 m5))
-         (ensures  (exists (m4 m5:memory). defined (m4 <*> m5) /\ (m1 <*> (m2 <*> m3)) == (m4 <*> m5) /\
+         (ensures  (exists (m4 m5:memory). (m1 <*> (m2 <*> m3)) == (m4 <*> m5) /\
 	                     phi m1 m2 m3 m4 m5))
   = ()
 
 let lemma_rewrite_sep_assoc4 (m1 m2 m3:memory) (phi:memory -> memory -> memory -> memory -> memory -> Type0)
-  :Lemma (requires (exists (m4 m5:memory). defined (m4 <*> m5) /\ (m1 <*> (m2 <*> m3)) == (m4 <*> m5) /\
+  :Lemma (requires (exists (m4 m5:memory). (m1 <*> (m2 <*> m3)) == (m4 <*> m5) /\
 	                     phi m1 m2 m3 m4 m5))
-         (ensures  (exists (m4 m5:memory). defined (m4 <*> m5) /\ ((m1 <*> m2) <*> m3) == (m4 <*> m5) /\
+         (ensures  (exists (m4 m5:memory). ((m1 <*> m2) <*> m3) == (m4 <*> m5) /\
 	                     phi m1 m2 m3 m4 m5))
   = ()
 
@@ -202,7 +200,7 @@ let write_read (r1 r2:ref int) (x y:int) =
   (r1 := 2;
    !r2)
   
-  <: STATE int (fun p m -> m == ((r1 |> x) <*> (r2 |> y)) /\ (defined m /\ p y ((r1 |> 2) <*> (r2 |> y))))
+  <: STATE int (fun p m -> m == ((r1 |> x) <*> (r2 |> y)) /\ (p y ((r1 |> 2) <*> (r2 |> y))))
 
   by (prelude ();
       process_command ();
@@ -219,7 +217,7 @@ let swap (r1 r2:ref int) (x y:int)
      r1 := y;
      r2 := x)
 
-     <: STATE unit (fun post m -> m == ((r1 |> x) <*> (r2 |> y)) /\ (defined m /\ post () ((r1 |> y) <*> (r2 |> x))))
+     <: STATE unit (fun post m -> m == ((r1 |> x) <*> (r2 |> y)) /\ (post () ((r1 |> y) <*> (r2 |> x))))
 
      by (prelude ();
                 process_command ();
@@ -244,7 +242,7 @@ let incr (r:ref int) (x:int)
      r := z;
      !r)
 
-     <: STATE int (fun post m -> m == (r |> x) /\ (defined m /\ post (x + 1) (r |> x + 1)))
+     <: STATE int (fun post m -> m == (r |> x) /\ (post (x + 1) (r |> x + 1)))
 
      by (prelude ();
                 process_command ();
@@ -262,7 +260,7 @@ let incr2 (r:ref int) (x:int)
   = (let y = incr r x in
      incr r y)
 
-    <: STATE int (fun post m -> m == (r |> x) /\ (defined m /\ post (x + 2) (r |> x + 2)))
+    <: STATE int (fun post m -> m == (r |> x) /\ (post (x + 2) (r |> x + 2)))
 
     by (prelude ();
                process_command ();
@@ -276,7 +274,7 @@ let rotate (r1 r2 r3:ref int) (x y z:int) =
    x)
    
   <: STATE int (fun post m -> m == ((r1 |> x) <*> ((r2 |> y) <*> (r3 |> z))) /\
-                         (defined m /\ post z ((r1 |> z) <*> ((r2 |> x) <*> (r3 |> y)))))
+                         (post z ((r1 |> z) <*> ((r2 |> x) <*> (r3 |> y)))))
 
   by (prelude ();
              apply_lemma (`lemma_rewrite_sep_comm);
@@ -293,21 +291,22 @@ let rotate (r1 r2 r3:ref int) (x y z:int) =
 	     get_to_the_next_frame ();
 	     process_command ())
 
+#push-options "--z3rlimit 50"
 let lemma_inline_in_patterns_two (psi1 psi2:Type) (m m':memory) (phi1 phi2: memory -> memory -> Type)
-  :Lemma (requires (defined (m <*> m') /\ ((psi1 ==> phi1 (m <*> m') emp) /\ (psi2 ==> phi2 (m <*> m') emp))))
-         (ensures  (exists (m0 m1:memory). defined (m0 <*> m1) /\ (m <*> m') == (m0 <*> m1) /\
+  :Lemma (requires (((psi1 ==> phi1 (m <*> m') emp) /\ (psi2 ==> phi2 (m <*> m') emp))))
+         (ensures  (exists (m0 m1:memory). (m <*> m') == (m0 <*> m1) /\
 	                              ((psi1 ==> phi1 m0 m1) /\
 				       (psi2 ==> phi2 m0 m1))))
   = ()
 
 let lemma_frame_out_empty_right (phi:memory -> memory -> memory -> Type) (m:memory)
-  :Lemma (requires (defined m /\ phi m m emp))
-         (ensures  (exists (m0 m1:memory). defined (m0 <*> m1) /\ m == (m0 <*> m1) /\ phi m m0 m1))
+  :Lemma (requires (phi m m emp))
+         (ensures  (exists (m0 m1:memory). m == (m0 <*> m1) /\ phi m m0 m1))
   = ()
 
 let lemma_frame_out_empty_left (phi:memory -> memory -> memory -> Type) (m:memory)
-  :Lemma (requires (defined m /\ phi m emp m))
-         (ensures  (exists (m0 m1:memory). defined (m0 <*> m1) /\ m == (m0 <*> m1) /\ phi m m0 m1))
+  :Lemma (requires (phi m emp m))
+         (ensures  (exists (m0 m1:memory). m == (m0 <*> m1) /\ phi m m0 m1))
   = lemma_sep_comm m emp
 
 let cond_test (r1 r2:ref int) (x:int) (b:bool)
@@ -316,7 +315,7 @@ let cond_test (r1 r2:ref int) (x:int) (b:bool)
      | true  -> r1 := y + 1
      | false -> r2 := y + 2)
 
-    <: STATE unit (fun p m -> m == ((r1 |> x) <*> (r2 |> x)) /\ (defined m /\ (b ==> p () ((r1 |> x + 1) <*> (r2 |> x))) /\
+    <: STATE unit (fun p m -> m == ((r1 |> x) <*> (r2 |> x)) /\ ((b ==> p () ((r1 |> x + 1) <*> (r2 |> x))) /\
                                                                        (~ b ==> p () ((r1 |> x) <*> (r2 |> x + 2)))))
 
     by (prelude ();
@@ -361,7 +360,6 @@ let null :listptr = None
 #reset-options "--print_full_names --__temp_fast_implicits"
 
 let rec valid (p:listptr) (repr:list int) (m:memory) :Tot Type0 (decreases repr) =
-  defined m /\
   (match repr with
    | []    -> None? p /\ m == emp
    | hd::tl -> Some? p /\
@@ -444,8 +442,8 @@ let __elim_valid_without_match
     | hd::tl -> assume (exists (tail:listptr) (m1:memory). m == (((Some?.v p) |> Cell hd tail) <*> m1) /\ valid tail tl m1)  //this assume is exactly the hd::tl case of the valid predicate, but the smt encoding of valid is deep embedding, and so, it cannot prove the shallow encoding of the same predicate, there are other ways to do this, but adding an assume for now
 
 let lemma_frame_exact (phi:memory -> memory -> memory -> memory -> Type0) (h h':memory)
-  :Lemma (requires (defined (h <*> h') /\ phi h h' h h'))
-         (ensures  (exists (h0 h1:memory). defined (h0 <*> h1) /\ (h <*> h') == (h0 <*> h1) /\ phi h h' h0 h1))
+  :Lemma (requires (phi h h' h h'))
+         (ensures  (exists (h0 h1:memory). (h <*> h') == (h0 <*> h1) /\ phi h h' h0 h1))
   = ()
 
 let rec process_trivial_tail () :Tac unit
@@ -541,7 +539,6 @@ let rec append (l1 l2:listptr)
 	 l1)
 
      <: STATE listptr (fun p m -> exists (fl1 fl2:list int) (m1 m2:memory).
-                                 defined (m1 <*> m2) /\
 				 m == (m1 <*> m2)    /\
 				 valid l1 fl1 m1     /\
 				 valid l2 fl2 m2     /\
@@ -711,7 +708,6 @@ let rec rev_append (l1:listptr) (l2:listptr)
        rev_append tl l1)
 
     <: STATE listptr (fun p m -> exists (fl1 fl2:list int) (m1 m2:memory).
-                                defined (m1 <*> m2) /\
 				m == (m1 <*> m2)    /\
 				valid l1 fl1 m1     /\
 				valid l2 fl2 m2     /\

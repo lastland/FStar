@@ -2,6 +2,8 @@ module SL.AutoTactic
 
 open FStar.Algebra.CommMonoid
 open FStar.Tactics
+module T = FStar.Tactics
+
 open FStar.Tactics.PatternMatching
 open CanonCommMonoid
 open FStar.Reflection
@@ -48,7 +50,7 @@ let from_sref (t:term) : Tac term =
     | Tv_FVar _, [(_t, Q_Implicit); (r, Q_Explicit)] -> r
     | _ -> fail ("from_sref: " ^ term_to_string t)
 
-let footprint_of (t:term) : Tac (list term) =
+let rec footprint_of (t:term) : Tac (list term) =
   let hd, tl = collect_app t in
   match inspect hd, tl with
   // | Tv_FVar fv, [(ta, Q_Implicit); (tr, Q_Explicit); (tv, Q_Explicit)] ->
@@ -58,6 +60,7 @@ let footprint_of (t:term) : Tac (list term) =
   //   if fv_is fv (`%read_wp) then [tr]
   //   else fail "not a read_wp"
   // -- generalizing the above to arbitrary "footprint expressions"
+  | Tv_Abs b t, [] -> footprint_of t
   | Tv_FVar fv, args ->
       if fv_is fv (`%with_fp)
       then match args with
@@ -65,7 +68,17 @@ let footprint_of (t:term) : Tac (list term) =
                let fp = explode_list fp in
                Tactics.Util.map from_sref fp
            | _ -> fail ("unexpected arity for with_fp: " ^ term_to_string t)
-      else fail ("not a with_fp: " ^ term_to_string t)
+      else if fv_is fv (`%frame_wp)
+      then match args with
+           | (_ta, Q_Implicit)::(wpa, Q_Explicit)::_ ->
+                footprint_of wpa
+           | _ -> fail ("unexpected arity for frame_wp: " ^ term_to_string t)
+      (* else if fv_is fv (`%par_wp') *)
+      (* then match args with *)
+      (*      | (_ta, Q_Implicit)::(_tb, Q_Implicit)::(wpa, Q_Explicit)::(wpb, Q_Explicit)::_ -> *)
+      (*           footprint_of wpa @ footprint_of wpb *)
+      (*      | _ -> fail ("unexpected arity for par_wp': " ^ term_to_string t) *)
+      else fail ("do not know how to get footprint of: " ^ term_to_string t)
   | _ -> fail ("not an applied free variable: " ^ term_to_string t)
 
 let pack_fv' (n:name) : Tac term = pack (Tv_FVar (pack_fv n))
@@ -75,7 +88,7 @@ let eexists (a:Type) (t:unit -> Tac a) : Tac a =
 
 let frame_wp_lemma (#a:Type) (#wp:st_wp a) (#f_post:memory -> post a) (m m0 m1:memory)
     (_ : (squash ((m0 <*> m1) == m)))
-    (_ : (squash (defined m /\ wp (f_post m1) m0))) :
+    (_ : (squash (wp (f_post m1) m0))) :
          (squash (frame_wp wp f_post m)) = ()
 
 let ite_wp_lemma (#a:Type) (#wp:st_wp a) (#post:post a) (#m:memory)
@@ -126,7 +139,7 @@ let binder_to_term (b : binder) : Tac term =
 
 noeq
 type cmd =
-  | Frame : ta:term -> twp:term -> tpost:term -> tm:term -> cmd
+  | Frame     : ta:term -> twp:term -> tpost:term -> tm:term -> cmd
   | Read      : cmd
   | Write     : cmd
   | Bind      : cmd
@@ -134,6 +147,7 @@ type cmd =
   | IfThenElse: cmd
   | Close     : cmd
   | WithFP    : cmd
+  | ParWP     : twpa:term -> twpb:term -> th0:term -> cmd
   | Assume    : cmd
   | Implies   : cmd
   | Forall    : cmd
@@ -146,11 +160,20 @@ let peek_in (t:term) : Tac cmd =
     | Tv_FVar fv  ->
      if fv_is fv (`%frame_wp)
      then match tl with
-          | [(ta, Q_Implicit);
-             (twp, Q_Explicit);
-             (tpost, Q_Explicit);
-             (tm, Q_Explicit)] -> Frame ta twp tpost tm
+          | [(ta,      Q_Implicit);
+             (twp,     Q_Explicit);
+             (tpost,   Q_Explicit);
+             (tm,      Q_Explicit)] -> Frame ta twp tpost tm
           | _ -> fail "Unexpected arity of frame"
+     else if fv_is fv (`%par_wp')
+     then match tl with
+          | [(ta,      Q_Implicit);
+             (tb,      Q_Implicit);
+             (twpa,    Q_Explicit);
+             (twpb,    Q_Explicit);
+             (tpost,   Q_Explicit);
+             (th0,     Q_Explicit)] -> ParWP twpa twpb th0
+          | _ -> fail "Unexpected arity of parwp'"
      else if fv_is fv (`%read_wp)               then Read
      else if fv_is fv (`%write_wp)              then Write
      else if fv_is fv (`%with_fp)               then WithFP
@@ -209,8 +232,59 @@ let rec solve_procedure_ref_value_existentials (use_trefl:bool) :Tac bool =
     witness w;
     solve_procedure_ref_value_existentials true
   | _ ->
-   if use_trefl then begin FStar.Tactics.split (); trefl (); true end
+   if use_trefl then begin T.split (); trefl (); true end
    else false
+
+let ref_terms_to_heap_term (refs : list term) : Tac term =
+    T.fold_left
+      (fun a t ->
+        let u = fresh_uvar (Some (`int)) in // TODO: int is hardcoded
+        let t = (`(`#t |> `#u)) in
+        if term_eq a (`emp)
+        then t
+        else (`(`#a <*> `#t))) (`emp) refs
+
+private
+let __unif_helper h1 h2 : Lemma (requires (h1 == h2))
+                                (ensures (h1 <*> emp == h2)) = ()
+
+(* refs is a list of the references in `small`, used for commuting the heaps appropriately for unification *)
+(* returns: the frame and a proof of equality of the heaps, which is a new binder introduced *)
+let find_frame (refs : list term) (small : term) (big : term) : Tac (term * binder) =
+    // Introduce a uvar for frame
+    let env = cur_env () in
+    let frame = uvar_env env (Some (`SLHeap.memory)) in
+
+    // Make the term equating the small footprint + frame with the current memory
+    let eq = `((`#small <*> `#frame) == `#big) in
+
+    //cut
+    dump "GG 0";
+    apply_lemma (mk_e_app (`__tcut) [eq]);
+    dump "GG 1 with new goal:";
+
+    //flip so that the current goal is the equality of memory expressions
+    flip ();
+    
+    dump ("before canon_monoid");
+    canon_monoid_sl refs;
+    dump ("after canon_monoid");
+    begin match trytac trefl with
+    | Some _ -> ()
+    | None ->
+        (* trefl didn't succeed, this can happen in the frame is empty
+         * since (r |> ?u1 <*> ?u2) does not unify with (r |> ?u1);
+         * so, try to set an empty frame and try again. *)
+        let b = unify frame (`emp) in
+        if b
+        then (apply_lemma (`__unif_helper); trefl ())
+        else fail "trefl failed and unifying to `emp` too"
+    end;
+    dump ("after trefl");
+
+    //this is the a ==> b thing when we did cut above
+    let heap_eq = implies_intro () in
+    (frame, heap_eq)
 
 let rec sl (i:int) : Tac unit =
   ddump ("SL :" ^ string_of_int i);
@@ -235,7 +309,7 @@ let rec sl (i:int) : Tac unit =
     // eventually this will use attributes,
     // but we can't currently get at them
     unfold_first_occurrence (fv_to_string fv);
-    ignore (repeat (fun () -> FStar.Tactics.split(); smt())); //definedness
+    ignore (repeat (fun () -> T.split(); smt())); //definedness
     norm [];
     sl (i + 1)
 
@@ -272,13 +346,13 @@ let rec sl (i:int) : Tac unit =
   | Read ->
     unfold_first_occurrence (`%read_wp);
     norm[];
-    eexists unit (fun () -> FStar.Tactics.split(); trefl());
+    eexists unit (fun () -> T.split(); trefl());
     sl (i + 1)
 
   | Write ->
     unfold_first_occurrence (`%write_wp);
     norm[];
-    eexists unit (fun () -> FStar.Tactics.split(); trefl());
+    eexists unit (fun () -> T.split(); trefl());
     sl (i + 1)
 
   | Forall ->
@@ -297,7 +371,7 @@ let rec sl (i:int) : Tac unit =
   | FramePost ->
     unfold_first_occurrence (`%frame_post);
     norm[];
-    FStar.Tactics.split(); smt(); //definedness
+    //T.split(); smt(); //definedness
     sl (i + 1)
 
   | Frame ta twp tpost tm ->
@@ -305,57 +379,57 @@ let rec sl (i:int) : Tac unit =
 
     //compute the footprint from the arg (e.g. read_wp r1, swap_wp r1 r2, etc.)
     let fp_refs = footprint_of twp in
-    ddump ("fp_refs="^ FStar.String.concat "," (List.Tot.map term_to_string fp_refs));
+    dump ("fp_refs="^ FStar.String.concat "," (List.Tot.map term_to_string fp_refs));
 
     //build the footprint memory expression, uvars for ref values, and join then
-    let fp = FStar.Tactics.Util.fold_left
-               (fun a t -> if term_eq a (`emp) then t
-                        else mk_e_app (`( <*> )) [a;t])
-               (`emp)
-               (FStar.Tactics.Util.map
-                 (fun t -> let u = fresh_uvar (Some (`int)) in
-                        mk_e_app (`( |> )) [t; u]) fp_refs)
-    in
-    ddump ("m0=" ^ term_to_string fp);
+    let fp = ref_terms_to_heap_term fp_refs in
+    dump ("m0=" ^ term_to_string fp);
 
-    //introduce another uvar for the _frame_
-    let env = cur_env () in
-    let frame = uvar_env env (Some (`SLHeap.memory)) in
-
-    //make the term equating the fp join frame with the current memory
-    let tp :term = mk_app (`eq2)
-                   [((`memory),                     Q_Implicit);
-                    (mk_e_app (`(<*>)) [fp;frame],  Q_Explicit);
-                    (tm,                            Q_Explicit)] in
-
-    //cut
-    apply_lemma (mk_e_app (`__tcut) [tp]);
-    ddump "with new goal:";
-
-    //flip so that the current goal is the equality of memory expressions
-    flip();
-    
-    ddump ("before canon_monoid");
-    canon_monoid_sl fp_refs;
-    ddump ("after canon_monoid");
-    trefl();
-    ddump ("after trefl");
-
-    //this is the a ==> b thing when we did cut above
-    let cut_hyp = implies_intro () in
+    let (frame, heap_eq) = find_frame fp_refs fp tm in
 
     //sort of beta step
     let fp = norm_term [] fp in  //if we don't do these norms, fast implicits don't kick in because of lambdas
     let frame = norm_term [] frame in
     apply_lemma (mk_e_app (`frame_wp_lemma) [tm; fp; frame]);
-    ddump ("after frame lemma - 1");
+    dump ("after frame lemma - 1");
 
     //equality goal from frame_wp_lemma
-    mapply (binder_to_term cut_hyp);
+    mapply (binder_to_term heap_eq);
 
-    FStar.Tactics.split(); smt(); //definedness
-    ddump ("after frame lemma - 2");
+    //T.split(); smt(); //definedness
+    dump ("after frame lemma - 2");
     sl(i + 1)
+
+  | ParWP wpa wpb th0 ->
+    (* Another interesting case. We find the footprints for each process
+     * and split the input heap accordingly. All of the extra parts of the heap,
+     * unneded by both processes, go arbitrarilly to the left one. *)
+    let fp_a = footprint_of wpa in
+    let fp_b = footprint_of wpb in
+    let fp = fp_a @ fp_b in
+
+    let h_a = ref_terms_to_heap_term fp_a in
+    let h_b = ref_terms_to_heap_term fp_b in
+    let h = ref_terms_to_heap_term fp in
+
+    let (frame, eq_hyp) = find_frame fp h th0 in
+
+    dump "GG 0";
+
+    witness (`(`#h_a <*> `#frame));
+    dump "GG 0.1";
+    witness h_b;
+    dump "GG 0.2";
+
+    apply_lemma (`(par_wp'_lemma));
+    dump "GG 1";
+
+    canon_monoid_sl fp;
+    dump "GG 3";
+    trefl ();
+
+    dump "GG 4";
+    sl (i + 1)
 
 let __elim_exists_as_forall
   (#a:Type) (#p:a -> Type) (#phi:Type) (_:(exists x. p x)) (_:squash (forall (x:a). p x ==> phi))
@@ -396,13 +470,13 @@ let prelude' () : Tac unit =
 
   //now the goal looks something like (defined m0 * m1 /\ (m == m0 * m1 /\ (...)))
   //do couple of implies_intro and and_elim to get these conjections
-  let h = implies_intro () in and_elim (binder_to_term h); clear h;
+  (* let h = implies_intro () in and_elim (binder_to_term h); clear h; *)
   let h = implies_intro() in and_elim (binder_to_term h); clear h;
 
   unfold_first_occurrence (`%with_fp);
   
   //defined m0 * m1
-  ignore (implies_intro ());
+  //ignore (implies_intro ());
 
   //this is the m = ..., introduced by the frame_wp
   let m0 = implies_intro () in
