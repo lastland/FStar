@@ -6,11 +6,6 @@ open SL.AutoTactic
 // Lift from PURE to STATE, needed since we use $ for some args, which is annoying...
 let l (x:'a) : ST 'a (fun p m -> m == emp /\ p x m) [] = x
 
-
-//#set-options "--debug SL.ConcurrentExamples"
-//#set-options "--print_full_names --prn --print_implicits"
-
-
 let left  r () : ST int (fun p m -> exists v. m == r |> v /\ p 1 (r |> v)) [tosref r] by (sl_auto ()) = 1
 let right r () : ST int (fun p m -> exists v. m == r |> v /\ p 2 (r |> v)) [tosref r] by (sl_auto ()) = 2
 
@@ -46,10 +41,8 @@ let set_to_2 (r : ref int) () : ST int (fun p m -> exists v. m == (r |> v) /\ p 
   r := 2;
   1
 
-#set-options "--debug SL.ConcurrentExamples --debug_level Tac"
-
 (* Actually changing a reference *)
-let test04 (r:ref int) : ST int (fun p m -> exists v. m == r |> v /\ p 3 (r |> v)) [tosref r] by (sl_auto ())
+let par_set (r:ref int) : ST int (fun p m -> exists v. m == r |> v /\ p 3 (r |> 2)) [tosref r] by (sl_auto ())
 =
   let (x, y) = par (set_to_2 r) (ret 2) in
   x + y
@@ -75,25 +68,14 @@ let test_acq_rel (r:ref int) (l:lock r) : ST unit (fun p m -> m == emp /\ p () e
   //let v = !r in
   release l
 
-// let test06 (r:ref int) : ST int (fun p m -> exists v. m == r |> v /\ p 3 (r |> v)) [] by (sl_auto ()) =
-//   let l = mklock r in
-//   let _ = par (fun () -> acquire l; release l; 1) (fun () -> acquire l; release l; 2) in
-//   3
-//
-// unfold let return_wp (a:Type) (x:a) :st_wp a =
-//   fun post m0 -> m0 == emp /\ post x m0
-//
-// open FStar.Tactics
-//
-// // `compute` is needed for these two, but they work without the tactic since they are
-// // explicit about their heaps already. We also use STATE instead of the framed ST.
-// let test01 () : STATE int (fun p m -> forall r. m == emp /\ p r m) by (compute ())
-// =
-//   let (x, y) = par_exp' emp emp (fun () -> l 1) (fun () -> l 2) in
-//   x + y
-//
-// let test02 () : STATE int (fun p m -> m == emp /\ p 3 m) by (compute ())
-// =
-//   let (x, y) = par_exp' emp emp (fun () -> l 1) (fun () -> l 2) in
-//   x + y
+let set_and_ret (r:ref int) (l : lock r) (n : nat) () : ST int (fun p m -> m == emp /\ p n emp) [] by (sl_auto ()) =
+  acquire l;
+  r := n;
+  release l;
+  n
 
+(* Note: final heap is empty, it is the lock that owns `r` *)
+let test06 (r:ref int) : ST int (fun p m -> exists v. m == r |> v /\ p 3 emp) [] by (sl_auto ()) =
+  let l = mklock r in
+  let (x, y) = par (set_and_ret r l 1) (set_and_ret r l 2) in
+  x + y
