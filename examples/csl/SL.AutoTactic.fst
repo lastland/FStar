@@ -73,11 +73,11 @@ let rec footprint_of (t:term) : Tac (list term) =
            | (_ta, Q_Implicit)::(wpa, Q_Explicit)::_ ->
                 footprint_of wpa
            | _ -> fail ("unexpected arity for frame_wp: " ^ term_to_string t)
-      (* else if fv_is fv (`%par_wp') *)
-      (* then match args with *)
-      (*      | (_ta, Q_Implicit)::(_tb, Q_Implicit)::(wpa, Q_Explicit)::(wpb, Q_Explicit)::_ -> *)
-      (*           footprint_of wpa @ footprint_of wpb *)
-      (*      | _ -> fail ("unexpected arity for par_wp': " ^ term_to_string t) *)
+      else if fv_is fv (`%par_wp')
+      then match args with
+           | (_ta, Q_Implicit)::(_tb, Q_Implicit)::(wpa, Q_Explicit)::(wpb, Q_Explicit)::_ ->
+                footprint_of wpa @ footprint_of wpb
+           | _ -> fail ("unexpected arity for par_wp': " ^ term_to_string t)
       else fail ("do not know how to get footprint of: " ^ term_to_string t)
   | _ -> fail ("not an applied free variable: " ^ term_to_string t)
 

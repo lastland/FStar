@@ -96,6 +96,10 @@ let test04 (r:ref int) (s:ref int) : ST int (fun p m -> exists v w. m == (r |> v
   let (x, y) = par (left s) (right r) in
   x + y
 
+let test05'' (r s t : ref int) : ST int (fun p m -> exists v w u. m == (r |> v <*> s |> w <*> t |> u) /\ p 5 (r |> v <*> s |> w <*> t |> u)) [] by (sl_auto ())
+=
+  let ((x, y), z) = par (fun () -> par (left s) (right r)) (right t) in
+  x + y + z
 
 
 
