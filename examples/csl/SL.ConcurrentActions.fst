@@ -43,7 +43,7 @@ assume val par : (#a:Type) -> (#b:Type) ->
 assume new type lock : #a:Type -> ref a -> Type0
 
 let mklock_wp #a (r:ref a) post m = exists v. m == r |> v /\ (forall (l:lock r). post l emp)
-let frame_mklock_wp r post m0 = frame_wp (mklock_wp r) (frame_post post) m0
+let frame_mklock_wp r post m0 = frame_wp (with_fp [tosref r] <| mklock_wp r) (frame_post post) m0
 assume val mklock : #a:Type -> (r: ref a) ->
                     STATE (lock r) (frame_mklock_wp r)
 
