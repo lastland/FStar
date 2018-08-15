@@ -149,6 +149,7 @@ type cmd =
   | WithFP    : cmd
   | ParWP     : twpa:term -> twpb:term -> th0:term -> cmd
   | Assume    : cmd
+  | Squash    : cmd
   | Implies   : cmd
   | Forall    : cmd
   | FramePost : cmd
@@ -182,6 +183,7 @@ let peek_in (t:term) : Tac cmd =
      else if fv_is fv (`%st_if_then_else)       then IfThenElse
      else if fv_is fv (`%st_close_wp)           then Close
      else if fv_is fv (`%st_assume_p)           then Assume
+     else if fv_is fv (`%squash)                then Squash
      else if fv_is fv (`%l_imp)                 then Implies
      else if fv_is fv (`%l_Forall)              then Forall
      else if fv_is fv (`%frame_post)            then FramePost
@@ -355,12 +357,16 @@ let rec sl (i:int) : Tac unit =
     eexists unit (fun () -> T.split(); trefl());
     sl (i + 1)
 
-  | Forall ->
-    ignore (forall_intros ());
+  | Squash ->
+    squash_intro ();
     sl (i + 1)
 
   | Implies ->
     ignore (implies_intros ());
+    sl (i + 1)
+
+  | Forall ->
+    ignore (forall_intros ());
     sl (i + 1)
 
   | WithFP ->
